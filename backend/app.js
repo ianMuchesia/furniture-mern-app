@@ -1,16 +1,35 @@
+require('dotenv').config()
+require('express-async-errors')
 const express = require('express')
-const fileUpload = require('express-fileupload')
-var cloudinary = require('cloudinary').v2;
-const products = require('./products')
-const app = express();
+const app = express()
 
-app.get('/', (req, res)=>{
-    res.status(200).json({msg:products})
-})
+//database
+const connectDB = require('./database/connectDB')
 
-const port = 3000
+//router
+const productRouter = require('./routes/product')
+const notFoundMiddleWare = require('./middleware/notFound')
+const errorMiddleWare = require('./middleware/error-handler')
 
+//port
+const port = process.env.PORT || 3000
 
-app.listen(port, ()=>{
-    console.log(`${products.length}`)
-})
+//middleware
+app.use(express.json())
+
+//routes
+app.use("/api/v1/products",productRouter)
+app.use(notFoundMiddleWare)
+app.use(errorMiddleWare)
+
+//server
+const start = async()=>{
+    try {
+        await connectDB(process.env.MONGO_URI)
+        app.listen(port,()=>{console.log(`server listening on port ${port}`)})
+    } catch (error) {
+        console.log(error)        
+    }
+}
+
+start()

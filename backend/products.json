@@ -1,405 +1,375 @@
 [
    {
       "name": "Leather Sofa Set",
-      " description": "This beautiful leather sofa set is the perfect addition to any living room. The set includes a 3-seater sofa, a 2-seater sofa, and an armchair. The leather is soft and comfortable and the frames are made of solid wood for durability.",
-      " price": 422000,
-      " rating": 4.5,
-     
-      " brand": "Furniture Co",
-      " category": "Living Room",
-      " material": "Leather, wood",
+      "description": "This beautiful leather sofa set is the perfect addition to any living room. The set includes a 3-seater sofa, a 2-seater sofa, and an armchair. The leather is soft and comfortable and the frames are made of solid wood for durability.",
+      "price": 422000,
+      "rating": 4.5,
+      "brand": "Furniture Co",
+      "category": "Living Room",
+      "material": "Leather, wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674031096/furniture/Leather_Sofa_Set_cldivm.jpg",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "King Size Bed",
-      " description": "This elegant king size bed is the perfect centerpiece for any bedroom. The bed is made of solid wood and features a headboard and footboard. The mattress is not included.",
-      " price": 40800,
-      " rating": 4.2,
-     
-      " brand": "Furniture Co",
-      " category": "Bedroom",
-      " material": "Wood",
+      "description": "This elegant king size bed is the perfect centerpiece for any bedroom. The bed is made of solid wood and features a headboard and footboard. The mattress is not included.",
+      "price": 40800,
+      "rating": 4.2,
+      "brand": "Furniture Co",
+      "category": "Bedroom",
+      "material": "Wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027794/furniture/King_Size_Bed_tc3byp.jpg",
       "featured": true,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Glass Dining Table",
-      " description": "This sleek glass dining table is perfect for any modern home. The table is made of tempered glass and features a stainless steel frame. The table can seat up to 6 people comfortably.",
-      " price": 20600,
-      " rating": 4.8,
+      "description": "This sleek glass dining table is perfect for any modern home. The table is made of tempered glass and features a stainless steel frame. The table can seat up to 6 people comfortably.",
+      "price": 20600,
+      "rating": 4.8,
       " availability": "Out of stock",
-      " brand": "Furniture Co",
-      " category": "Dining Room",
-      " material": "Glass, steel",
+      "brand": "Furniture Co",
+      "category": "Dining Room",
+      "material": "Glass, steel",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027821/furniture/Glass_Dining_Table_qq0xvh.jpg",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Convertible Ottoman Bed",
-      " description": "This versatile convertible ottoman bed is perfect for small spaces. It features a comfortable ottoman that can be easily converted into a bed. The bed is made of durable wood and is available in a variety of colors.",
-      " price": 90000,
-      " rating": 4.9,
-     
-      " brand": "Furniture Co",
-      " category": "Bedroom",
-      " material": "Wood",
+      "description": "This versatile convertible ottoman bed is perfect for small spaces. It features a comfortable ottoman that can be easily converted into a bed. The bed is made of durable wood and is available in a variety of colors.",
+      "price": 90000,
+      "rating": 4.9,
+      "brand": "Furniture Co",
+      "category": "Bedroom",
+      "material": "Wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674030965/furniture/Convertible_Ottoman_Bed_omgha7.jpg",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Rocking Chair",
-      " description": "This comfortable rocking chair is perfect for relaxing in any room. It is made of durable wood and features a smooth rocking motion. The chair is available in a variety of colors and can hold up to 250 pounds.",
-      " price": 12000,
-      " rating": 4.7,
-     
-      " brand": "Furniture Co",
-      " category": "Living Room",
-      " material": "Wood",
+      "description": "This comfortable rocking chair is perfect for relaxing in any room. It is made of durable wood and features a smooth rocking motion. The chair is available in a variety of colors and can hold up to 250 pounds.",
+      "price": 12000,
+      "rating": 4.7,
+      "brand": "Furniture Co",
+      "category": "Living Room",
+      "material": "Wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027825/furniture/Rocking_Chair_sxm0xd.jpg",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Wall Bed",
-      " description": "This space-saving wall bed is perfect for small spaces. It features a comfortable bed that can be easily folded into the wall. The bed is made of durable wood and is available in a variety of colors.",
-      " price": 250000,
-      " rating": 4.8,
-     
-      " brand": "Furniture Co",
-      " category": "Bedroom",
-      " material": "Wood",
+      "description": "This space-saving wall bed is perfect for small spaces. It features a comfortable bed that can be easily folded into the wall. The bed is made of durable wood and is available in a variety of colors.",
+      "price": 250000,
+      "rating": 4.8,
+      "brand": "Furniture Co",
+      "category": "Bedroom",
+      "material": "Wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027813/furniture/Wall_Bed_jjlt1l.jpg",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Standing Desk",
-      " description": "This ergonomic standing desk is perfect for any office. It is made of durable wood and features an adjustable height. The desk can hold up to 150 pounds and is available in a variety of colors.",
-      " price": 15000,
-      " rating": 4.9,
-     
-      " brand": "Furniture Co",
-      " category": "Office",
-      " material": "Wood",
+      "description": "This ergonomic standing desk is perfect for any office. It is made of durable wood and features an adjustable height. The desk can hold up to 150 pounds and is available in a variety of colors.",
+      "price": 15000,
+      "rating": 4.9,
+      "brand": "Furniture Co",
+      "category": "Office",
+      "material": "Wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027812/furniture/Standing_Desk_ji5csv.jpg",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Murphy Bed",
-      " description": "This space-saving Murphy bed is perfect for small spaces. It features a comfortable bed that can be easily folded into the wall. The bed is made of durable wood and is available in a variety of colors.",
-      " price": 99000,
-      " rating": 4.9,
-     
-      " brand": "Furniture Co",
-      " category": "Bedroom",
-      " material": "Wood",
+      "description": "This space-saving Murphy bed is perfect for small spaces. It features a comfortable bed that can be easily folded into the wall. The bed is made of durable wood and is available in a variety of colors.",
+      "price": 99000,
+      "rating": 4.9,
+      "brand": "Furniture Co",
+      "category": "Bedroom",
+      "material": "Wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027811/furniture/Murphy_Bed_s66x9m.jpg",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Tree Trunk Coffee Table",
-      " description": "This unique tree trunk coffee table is perfect for any living room. It is made of a reclaimed tree trunk and features a natural wood finish. The table is available in a variety of sizes and is suitable for indoor and outdoor use.",
-      " price": 52000,
-      " rating": 4.8,
-     
-      " brand": "Furniture Co",
-      " category": "Living Room",
-      " material": "Wood",
+      "description": "This unique tree trunk coffee table is perfect for any living room. It is made of a reclaimed tree trunk and features a natural wood finish. The table is available in a variety of sizes and is suitable for indoor and outdoor use.",
+      "price": 52000,
+      "rating": 4.8,
+      "brand": "Furniture Co",
+      "category": "Living Room",
+      "material": "Wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027812/furniture/Tree_Trunk_Coffee_Table_hrnhjo.png",
       "featured": true,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Geometric Bookshelf",
-      " description": "This unique geometric bookshelf is perfect for any living room. It is made of durable wood and features a geometric design. The bookshelf is available in a variety of colors and can hold up to 150 pounds.",
-      " price": 20000,
-      " rating": 4.9,
-     
-      " brand": "Furniture Co",
-      " category": "Living Room",
-      " material": "Wood",
+      "description": "This unique geometric bookshelf is perfect for any living room. It is made of durable wood and features a geometric design. The bookshelf is available in a variety of colors and can hold up to 150 pounds.",
+      "price": 20000,
+      "rating": 4.9,
+      "brand": "Furniture Co",
+      "category": "Living Room",
+      "material": "Wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027810/furniture/Geometric_Bookshelf_e0ymyw.jpg",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Globe Bar",
-      " description": "This unique globe bar is perfect for any living room. It features a rotating globe design and can hold up to 50 bottles of wine. The bar is made of durable wood and is available in a variety of colors.",
-      " price": 35000,
-      " rating": 4.8,
-     
-      " brand": "Furniture Co",
-      " category": "Living Room",
-      " material": "Wood",
+      "description": "This unique globe bar is perfect for any living room. It features a rotating globe design and can hold up to 50 bottles of wine. The bar is made of durable wood and is available in a variety of colors.",
+      "price": 35000,
+      "rating": 4.8,
+      "brand": "Furniture Co",
+      "category": "Living Room",
+      "material": "Wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027810/furniture/Globe_Bar_qm2scn.jpg",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Multifunctional Coffee Table",
-      " description": "This unique multifunctional coffee table is perfect for any living room. It is made of durable wood and features a lift-top design, which can be used as a desk or dining table. The table is available in a variety of colors.",
-      " price": 25000,
-      " rating": 4.9,
-     
-      " brand": "Furniture Co",
-      " category": "Living Room",
-      " material": "Wood",
+      "description": "This unique multifunctional coffee table is perfect for any living room. It is made of durable wood and features a lift-top design, which can be used as a desk or dining table. The table is available in a variety of colors.",
+      "price": 25000,
+      "rating": 4.9,
+      "brand": "Furniture Co",
+      "category": "Living Room",
+      "material": "Wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027816/furniture/Multifunctional_Coffee_Table_sppdz8.jpg",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Floating Bed",
-      " description": "This unique floating bed is perfect for any bedroom. It is made of durable wood and features a sleek floating design. The bed is available in a variety of sizes and can hold up to 250 pounds.",
-      " price": 55000,
-      " rating": 4.9,
-     
-      " brand": "Furniture Co",
-      " category": "Bedroom",
-      " material": "Wood",
+      "description": "This unique floating bed is perfect for any bedroom. It is made of durable wood and features a sleek floating design. The bed is available in a variety of sizes and can hold up to 250 pounds.",
+      "price": 55000,
+      "rating": 4.9,
+      "brand": "Furniture Co",
+      "category": "Bedroom",
+      "material": "Wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027810/furniture/Floating_Bed_sxo4ed.jpg",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Daybed",
-      " description": "This comfortable daybed is perfect for any room. It is made of durable wood and features a trundle bed underneath for extra sleeping space. The daybed is available in a variety of colors and can hold up to 250 pounds.",
-      " price": 35000,
-      " rating": 4.8,
-     
-      " brand": "Furniture Co",
-      " category": "Living Room",
-      " material": "Wood",
+      "description": "This comfortable daybed is perfect for any room. It is made of durable wood and features a trundle bed underneath for extra sleeping space. The daybed is available in a variety of colors and can hold up to 250 pounds.",
+      "price": 35000,
+      "rating": 4.8,
+      "brand": "Furniture Co",
+      "category": "Living Room",
+      "material": "Wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027809/furniture/Daybed_lh3hmp.jpg",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Saucer Chair",
-      " description": "This comfortable saucer chair is perfect for any room. It is made of durable fabric and features a sturdy steel frame. The chair is available in a variety of colors and can hold up to 250 pounds.",
-      " price": 8000,
-      " rating": 4.7,
-     
-      " brand": "Furniture Co",
-      " category": "Living Room",
-      " material": "Fabric, steel",
+      "description": "This comfortable saucer chair is perfect for any room. It is made of durable fabric and features a sturdy steel frame. The chair is available in a variety of colors and can hold up to 250 pounds.",
+      "price": 8000,
+      "rating": 4.7,
+      "brand": "Furniture Co",
+      "category": "Living Room",
+      "material": "Fabric, steel",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027807/furniture/Saucer_Chair_owm5qc.jpg",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Garden Bench",
-      " description": "This durable garden bench is perfect for any outdoor space. It is made of weather-resistant wood and is suitable for year-round use. The bench is available in a variety of colors and can hold up to 250 pounds.",
-      " price": 10000,
-      " rating": 4.8,
-     
-      " brand": "Furniture Co",
-      " category": "Outdoor",
-      " material": "Wood",
+      "description": "This durable garden bench is perfect for any outdoor space. It is made of weather-resistant wood and is suitable for year-round use. The bench is available in a variety of colors and can hold up to 250 pounds.",
+      "price": 10000,
+      "rating": 4.8,
+      "brand": "Furniture Co",
+      "category": "Outdoor",
+      "material": "Wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027806/furniture/Garden_Bench_gyps2q.jpg",
       "featured": true,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Pouf Ottoman",
-      " description": "This comfortable pouf ottoman is perfect for any room. It is made of durable fabric and features a sturdy frame. The ottoman is available in a variety of colors and can be used as a seat or footrest.",
-      " price": 6000,
-      " rating": 4.7,
-     
-      " brand": "Furniture Co",
-      " category": "Living Room",
-      " material": "Fabric",
+      "description": "This comfortable pouf ottoman is perfect for any room. It is made of durable fabric and features a sturdy frame. The ottoman is available in a variety of colors and can be used as a seat or footrest.",
+      "price": 6000,
+      "rating": 4.7,
+      "brand": "Furniture Co",
+      "category": "Living Room",
+      "material": "Fabric",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027805/furniture/Pouf_Ottoman_jb9v8e.jpg",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Standing Mirror with Storage",
-      " description": "This elegant standing mirror with storage is perfect for any bedroom. It is made of durable wood and features a built-in storage compartment. The mirror is available in a variety of colors and can hold up to 50 pounds.",
-      " price": 15000,
-      " rating": 4.9,
-     
-      " brand": "Furniture Co",
-      " category": "Bedroom",
-      " material": "Wood",
+      "description": "This elegant standing mirror with storage is perfect for any bedroom. It is made of durable wood and features a built-in storage compartment. The mirror is available in a variety of colors and can hold up to 50 pounds.",
+      "price": 15000,
+      "rating": 4.9,
+      "brand": "Furniture Co",
+      "category": "Bedroom",
+      "material": "Wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027803/furniture/Standing_Mirror_with_Storage_qm5vzf.jpg",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Ladder Bookshelf",
-      " description": "This unique ladder bookshelf is perfect for any room. It is made of durable wood and features a ladder design. The bookshelf is available in a variety of colors and can hold up to 150 pounds.",
-      " price": 18000,
-      " rating": 4.9,
-     
-      " brand": "Furniture Co",
-      " category": "Living Room",
-      " material": "Wood",
+      "description": "This unique ladder bookshelf is perfect for any room. It is made of durable wood and features a ladder design. The bookshelf is available in a variety of colors and can hold up to 150 pounds.",
+      "price": 18000,
+      "rating": 4.9,
+      "brand": "Furniture Co",
+      "category": "Living Room",
+      "material": "Wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027804/furniture/Ladder_Bookshelf_efdn0f.png",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Standing Coat Rack",
-      " description": "This elegant standing coat rack is perfect for any entryway. It is made of durable wood and features a variety of hooks for hanging coats and other items. The coat rack is available in a variety of colors.",
-      " price": 9000,
-      " rating": 4.8,
-     
-      " brand": "Furniture Co",
-      " category": "Entryway",
-      " material": "Wood",
+      "description": "This elegant standing coat rack is perfect for any entryway. It is made of durable wood and features a variety of hooks for hanging coats and other items. The coat rack is available in a variety of colors.",
+      "price": 9000,
+      "rating": 4.8,
+      "brand": "Furniture Co",
+      "category": "Entryway",
+      "material": "Wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027802/furniture/Standing_Coat_Rack_o2fvrg.jpg",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Window Seat",
-      " description": "This comfortable window seat is perfect for any room. It is made of durable wood and features a built-in storage compartment. The window seat is available in a variety of colors and can hold up to 250 pounds.",
-      " price": 25000,
-      " rating": 4.9,
-     
-      " brand": "Furniture Co",
-      " category": "Living Room",
-      " material": "Wood",
+      "description": "This comfortable window seat is perfect for any room. It is made of durable wood and features a built-in storage compartment. The window seat is available in a variety of colors and can hold up to 250 pounds.",
+      "price": 25000,
+      "rating": 4.9,
+      "brand": "Furniture Co",
+      "category": "Living Room",
+      "material": "Wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027803/furniture/Window_Seat_tlwrpy.jpg",
       "featured": true,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Rocking Bed",
-      " description": "This unique rocking bed is perfect for any bedroom. It is made of durable wood and features a rocking design. The bed is available in a variety of sizes and can hold up to 250 pounds.",
-      " price": 60000,
-      " rating": 4.8,
-     
-      " brand": "Furniture Co",
-      " category": "Bedroom",
-      " material": "Wood",
+      "description": "This unique rocking bed is perfect for any bedroom. It is made of durable wood and features a rocking design. The bed is available in a variety of sizes and can hold up to 250 pounds.",
+      "price": 60000,
+      "rating": 4.8,
+      "brand": "Furniture Co",
+      "category": "Bedroom",
+      "material": "Wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027801/furniture/Rocking_Bed_pooknr.jpg",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Wall Mounted Pull Out Table",
-      " description": "This space-saving wall mounted pull out table is perfect for small spaces. It features a foldable design that can be easily pulled out when needed and pushed back when not in use. The table is made of durable wood and is available in a variety of colors.",
-      " price": 20000,
-      " rating": 4.9,
-     
-      " brand": "Furniture Co",
-      " category": "Kitchen",
-      " material": "Wood",
+      "description": "This space-saving wall mounted pull out table is perfect for small spaces. It features a foldable design that can be easily pulled out when needed and pushed back when not in use. The table is made of durable wood and is available in a variety of colors.",
+      "price": 20000,
+      "rating": 4.9,
+      "brand": "Furniture Co",
+      "category": "Kitchen",
+      "material": "Wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027832/furniture/Wall_Mounted_Pull_Out_Table_lvlvbj.jpg",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Wall Mounted Drop Leaf Table",
-      " description": "This space-saving wall mounted drop leaf table is perfect for small spaces. It features a foldable design that can be easily dropped down when needed and pushed back up when not in use. The table is made of durable wood and is available in a variety of colors.",
-      " price": 15000,
-      " rating": 4.8,
-     
-      " brand": "Kitchen Co",
-      " category": "Kitchen",
-      " material": "Wood",
+      "description": "This space-saving wall mounted drop leaf table is perfect for small spaces. It features a foldable design that can be easily dropped down when needed and pushed back up when not in use. The table is made of durable wood and is available in a variety of colors.",
+      "price": 15000,
+      "rating": 4.8,
+      "brand": "Kitchen Co",
+      "category": "Kitchen",
+      "material": "Wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027797/furniture/Wall_Mounted_Drop_Leaf_Table_djaxkc.jpg",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Wall Mounted Flip Down Desk",
-      " description": "This space-saving wall mounted flip down desk is perfect for small spaces. It features a foldable design that can be easily flipped down when needed and pushed back up when not in use. The desk is made of durable wood and is available in a variety of colors.",
-      " price": 22000,
-      " rating": 4.9,
-     
-      " brand": "Furniture Co",
-      " category": "Living Room",
-      " material": "Wood",
+      "description": "This space-saving wall mounted flip down desk is perfect for small spaces. It features a foldable design that can be easily flipped down when needed and pushed back up when not in use. The desk is made of durable wood and is available in a variety of colors.",
+      "price": 22000,
+      "rating": 4.9,
+      "brand": "Furniture Co",
+      "category": "Living Room",
+      "material": "Wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027794/furniture/Wall_Mounted_Flip_Down_Desk_w15hj7.jpg",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Wall Mounted Drying Rack",
-      " description": "This space-saving wall mounted drying rack is perfect for small spaces. It features a foldable design that can be easily pulled out when needed and pushed back when not in use. The rack is made of durable wood and is available in a variety of colors.",
-      " price": 9000,
-      " rating": 4.8,
-     
-      " brand": "Kitchen Co",
-      " category": "Kitchen",
-      " material": "Wood",
+      "description": "This space-saving wall mounted drying rack is perfect for small spaces. It features a foldable design that can be easily pulled out when needed and pushed back when not in use. The rack is made of durable wood and is available in a variety of colors.",
+      "price": 9000,
+      "rating": 4.8,
+      "brand": "Kitchen Co",
+      "category": "Kitchen",
+      "material": "Wood",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027800/furniture/Wall_Mounted_Drying_Rack_roqpu9.png",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Wall Mounted Pot Rack",
-      " description": "This space-saving wall mounted pot rack is perfect for small spaces. It features a foldable design that can be easily pulled out when needed and pushed back when not in use. The rack is made of durable steel and is available in a variety of colors.",
-      " price": 15000,
-      " rating": 4.9,
-     
-      " brand": "Kitchen Co",
-      " category": "Kitchen",
-      " material": "Steel",
+      "description": "This space-saving wall mounted pot rack is perfect for small spaces. It features a foldable design that can be easily pulled out when needed and pushed back when not in use. The rack is made of durable steel and is available in a variety of colors.",
+      "price": 15000,
+      "rating": 4.9,
+      "brand": "Kitchen Co",
+      "category": "Kitchen",
+      "material": "Steel",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674027699/furniture/Wall_Mounted_Pot_Rack_h6qmfj.png",
       "featured": true,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Hanging Chair",
-      " description": "This comfortable hanging chair is the perfect addition to any room. Made with a sturdy metal frame and a durable canvas seat, it's perfect for relaxing and enjoying a good book or a sunny day.",
-      " price": 12000,
-      " rating": 4.8,
-     
-      " brand": "Outdoor Co",
-      " category": "Outdoor",
-      " material": "Metal, canvas",
+      "description": "This comfortable hanging chair is the perfect addition to any room. Made with a sturdy metal frame and a durable canvas seat, it's perfect for relaxing and enjoying a good book or a sunny day.",
+      "price": 12000,
+      "rating": 4.8,
+      "brand": "Outdoor Co",
+      "category": "Outdoor",
+      "material": "Metal, canvas",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674028092/furniture/Hanging_Chair_cstt6s.png",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Modular Sofa",
-      " description": "This stylish modular sofa is perfect for any living room. Made with a sturdy wooden frame and comfortable foam cushions, it can be arranged in a variety of configurations to suit your needs.",
-      " price": 35000,
-      " rating": 4.6,
-     
-      " brand": "Furniture Co",
-      " category": "Living Room",
-      " material": "Wood, foam",
-      "imageUrl": "",
+      "description": "This stylish modular sofa is perfect for any living room. Made with a sturdy wooden frame and comfortable foam cushions, it can be arranged in a variety of configurations to suit your needs.",
+      "price": 35000,
+      "rating": 4.6,
+      "brand": "Furniture Co",
+      "category": "Living Room",
+      "material": "Wood, foam",
+      "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674037060/furniture/Modular_Sofa_okbs7b.png",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Bean Bag Chair",
-      " description": "This comfortable bean bag chair is perfect for any room in the house. Made with a durable cotton cover and filled with high-density foam, it's perfect for lounging or watching TV.",
-      " price": 8000,
-      " rating": 4.5,
-     
-      " brand": "Furniture Co",
-      " category": "Living Room",
-      " material": "Cotton, foam",
+      "description": "This comfortable bean bag chair is perfect for any room in the house. Made with a durable cotton cover and filled with high-density foam, it's perfect for lounging or watching TV.",
+      "price": 8000,
+      "rating": 4.5,
+      "brand": "Furniture Co",
+      "category": "Living Room",
+      "material": "Cotton, foam",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674028266/furniture/Bean_Bag_Chair_yjnn5c.png",
       "featured": true,
-      "In Stock": 2
+      "InStock": 2
    },
    {
       "name": "Hanging Egg Chair",
-      " description": "This comfortable hanging egg chair is perfect for relaxing and enjoying the outdoors. Made with a durable rattan material and a sturdy metal frame, it's perfect for reading a book or taking a nap.",
-      " price": 20000,
-      " rating": 4.9,
-     
-      " brand": "Outdoor Co",
-      " category": "Outdoor",
-      " material": "Rattan, metal",
+      "description": "This comfortable hanging egg chair is perfect for relaxing and enjoying the outdoors. Made with a durable rattan material and a sturdy metal frame, it's perfect for reading a book or taking a nap.",
+      "price": 20000,
+      "rating": 4.9,
+      "brand": "Outdoor Co",
+      "category": "Outdoor",
+      "material": "Rattan, metal",
       "imageUrl": "https://res.cloudinary.com/dx1lyzcdb/image/upload/v1674028395/furniture/Hanging_Egg_Chair_fithxe.jpg",
       "featured": false,
-      "In Stock": 2
+      "InStock": 2
    }
 ]

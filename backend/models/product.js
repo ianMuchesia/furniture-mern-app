@@ -1,54 +1,61 @@
-const mongoose  = require('mongoose')
+const mongoose = require("mongoose");
 
 const productSchema = new mongoose.Schema({
-    name:{
-        type:String,
-        required:[true, 'product name must be provided']
+  name: {
+    type: String,
+    required: [true, "product name must be provided"],
+  },
+  description: {
+    type: String,
+    required: [true, "product description must be provided"],
+  },
+   price: {
+    type: Number,
+    required: [true, "product price must be provided"],
+  }, 
+  rating: {
+    type: Number,
+    default: 4,
+  },
+  brand: {
+    type: String,
+    enum: {
+      values: ["Furniture Co", "Outdoor Co", "Kitchen Co"],
+      message: "{VALUE} is not supported",
     },
-    price:{
-        type: Number,
-        required:[true, 'product price must be provided']
+  },
+  category: {
+    type: String,
+    enum: {
+      values: [
+        "Living Room",
+        "Kitchen",
+        "Outdoor",
+        "Bedroom",
+        "Entryway",
+        "Office",
+        "Dining Room",
+      ],
     },
-    featured:{
-        type:Boolean,
-        default:false,
-    },
-    rating:{
-        type:Number,
-        default:4,
+  },
+ material: {
+    type: String,
+    required: [true, "please provide type of material"],
+  }, 
 
-    },
-    description:{
-        type:String,
-        required:[true,'product description must be provided']
+  imageUrl: {
+    type: String,
+    required: [true, "please provide an image"],
+  },
+  featured: {
+    type: Boolean,
+    default: false,
+  },
 
-    },
-    brand:{
-        type:String,
-        enum:{
-            values:['Furniture Co','Outdooe Co', 'Kitchen Co'],
-            message:'{VALUE} is not supported'
-        }
-    },
-    category:{
-        type:String,
-        enum:{
-            values:['Living Room','Kitchen','Outdoor','Bedroom','Entryway','Office','Dining Room']
-        }
-    },
-    Instock:{
-        type:Number,
-        required:[true,'Number of products in stock must be provided']
-    },
-    imageUrl:{
-        type:"string",
-        required:[true,'please provide an image']
-    },
-    material:{
-        type:String,
-        required:[true, 'lease provide type of material']
-    }
+   InStock: {
+    type: Number,
+    required: [true, "Number of products in stock must be provided"],
+  }, 
+});
 
-})
-
-module.exports = mongoose.model('Product', productSchema)
+module.exports = mongoose.model("Product", productSchema);

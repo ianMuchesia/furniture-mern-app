@@ -2,7 +2,9 @@ require('dotenv').config()
 require('express-async-errors')
 const express = require('express')
 const app = express()
-
+//cors
+var cors = require('cors');
+app.use(cors({origin: 'http://localhost:5173'}));
 //database
 const connectDB = require('./database/connectDB')
 
@@ -12,7 +14,7 @@ const notFoundMiddleWare = require('./middleware/notFound')
 const errorMiddleWare = require('./middleware/error-handler')
 
 //port
-const port = process.env.PORT || 3000
+const port = process.env.PORT 
 
 //middleware
 app.use(express.json())

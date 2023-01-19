@@ -20,7 +20,7 @@ const Shop = () => {
         return ()=>{isMounted=false}
     }, [])
   return (
-    <div>Shop</div>
+    <div>Shopp</div>
   )
 }
 

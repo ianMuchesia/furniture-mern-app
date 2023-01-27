@@ -4,8 +4,10 @@ export interface Product{
     description: string;
     price: number;
     featured: boolean;
+    imageUrl:string;
+    
 } 
 export interface ProductArrayModel{
     allProducts : Product[],
-    particular_Product: Product
+   
 }

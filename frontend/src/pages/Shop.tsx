@@ -1,26 +1,43 @@
-import React, { useEffect } from 'react'
+import React, { useState,useEffect } from 'react'
 import axios from 'axios'
+import Card from '../components/Card'
+import { Product } from '../@types/type'
+import Loader from '../components/Loader'
 const Shop = () => {
-    useEffect(()=>{
-        let isMounted = true
-        const fetchData = async()=>{
-            
-            try {
-                const response = await axios.get('http://localhost:3000/api/v1/products')
-                if(isMounted){
+    const [products , setProducts ] = useState<Product[]>([])
 
-                }
-            
-            console.log(response)
-            } catch (error) {
-                console.log(error)
+    const [loading, setLoading] = useState(false)
+
+    useEffect(()=>{
+        let isMounted = true;
+        const fetchData = async()=>{
+            setLoading(true)
+           try {
+            const {data} = await axios.get('http://localhost:3000/api/v1/products')
+           
+            if(isMounted ){
+                setProducts(data.msg)
             }
+           } catch (error) {
+            
+           }finally{
+            setLoading(false)
+           }
         }
         fetchData()
-        return ()=>{isMounted=false}
-    }, [])
+        return ()=>{isMounted = false}
+    },[])
+    console.log(products)
+    
   return (
-    <div>Shopp</div>
+    <div  className="grid sm:grid-cols-3 lg:grid-cols-4 gap-4 place-items-center">
+        {loading && <Loader/>}
+      {   products.map(product=>{
+            return <Card key={product._id} product={product}/> 
+        })}
+        
+       
+    </div>
   )
 }
 

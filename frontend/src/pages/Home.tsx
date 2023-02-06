@@ -1,13 +1,11 @@
 import React from 'react'
-import Hero from '../components/Hero'
-import Features from '../components/Features'
-
+import {Features, Hero} from "../components/HomeComponents"
 const Home = () => {
   return (
-    <div className='mx-8 '>
+    <section className='mx-8 '>
       <Hero/>
       <Features/>
-    </div>
+    </section>
   )
 }
 

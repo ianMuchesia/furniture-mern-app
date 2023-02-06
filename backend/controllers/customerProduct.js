@@ -1,38 +1,68 @@
-const Product = require('../models/product')
+const Product = require("../models/product");
 
-const getSingleProduct=async(req,res)=>{
-    const {id:ProductID} = req.params;
+const getSingleProduct = async (req, res) => {
+  const { id: ProductID } = req.params;
 
-    const product = await Product.findOne({_id:ProductID})
-    res.status(200).json({msg:product})
+  const product = await Product.findOne({ _id: ProductID });
+  res.status(200).json({ msg: product });
+};
 
-}
+const getAllProducts = async (req, res) => {
+  const { featured, category, search, sort, fields, numericFilters } = req.query;
 
-const getAllProducts = async(req,res)=>{
-    
-
-    const {featured , category , search , sort} = req.query
-
-    const queryObject = {}
-
-    if(featured){
-        queryObject.featured = featured === "true"? true: false;
+  const queryObject = {};
+  //featured
+  if (featured) {
+    queryObject.featured = featured === "true" ? true : false;
+  }
+  //category
+  if (category) {
+    queryObject.category = category;
+  }
+  //search for an item
+  if (search) {
+    queryObject.name = { $regex: search, $options: "i" };
+  }
+  if(numericFilters){
+    const opertorMap ={
+        '>':'$gt',
+        '>=':'$gte',
+        '=':'$eq',
+        '<':'$lt',
+        '<=':'$lte',
     }
-    if(category){
-        queryObject.category = category
-    }if(search){
-        queryObject.name = {$regex:search, $options: "i"}
-    }
-    
-    let result = Product.find(queryObject)
-    if(sort){
-        const sortArray = sort.split(",").join(" ")
-        result = result.sort(sortArray)
-    }else{
-        result = result.sort('createdAt')
-    }
-    const products = await result
-    res.status(200).json({msg:products , nbHits:products.length})
-}
+    const regEx = /\b(<|>|>=|=|<|<=)\b/g
+    let filters = numericFilters.replace(regEx,(match)=>`-${opertorMap[match]}-`)
+    const options = ['price', 'rating']
+    filters =filters.split(',').forEach((item)=>{
+       const [field, operator, value] =  item.split('-') 
+       if(options.includes(field)){
+        queryObject[field] = {[operator]:Number(value)}
+       }
+    })
+    console.log(queryObject)
+  }
 
-module.exports = {getAllProducts, getSingleProduct}
+  let result = Product.find(queryObject);
+  if (sort) {
+    const sortArray = sort.split(",").join(" ");
+    result = result.sort(sortArray);
+  } else {
+    result = result.sort("createdAt");
+  }
+  //select the only one you want to see
+  if (fields) {
+    const fieldList = fields.split(",").join(" ");
+    result = result.select(fieldList);
+  }
+  //setting up page functionality
+  const page = Number(req.query.page) || 1;
+  const limit = Number(req.query.limit) || 9;
+  const skip = (page - 1) * limit;
+
+  result = result.skip(skip).limit(limit);
+  const products = await result;
+  res.status(200).json({ msg: products, nbHits: products.length });
+};
+
+module.exports = { getAllProducts, getSingleProduct };

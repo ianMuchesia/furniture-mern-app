@@ -51,11 +51,10 @@ const Navbar = () => {
         </div>
           <ul className={`h-full top-0  flex  flex-col items-center justify-center absolute  text-lg font-bold gap-0 w-full bg-white z-[1] ${toggle?"h-screen":"hidden"} `}>
            <li className="mb-12"><span onClick={handleClick}><AiOutlineClose size={40}/></span></li> 
-          <li className={styles.links}>Home</li>
-            <li className={styles.links}>Shop</li>
-            <li className={styles.links}>About</li>
-            <li className={styles.links}>Contact</li>
-            
+           <li className={ styles.links}><NavLink to="/">Home</NavLink></li>
+            <li className={styles.links}><NavLink to="Shop">Shop</NavLink></li>
+            <li className={styles.links}><NavLink to="About">About</NavLink></li>
+            <li className={styles.links}><NavLink to="Contact">Contact</NavLink></li>
           </ul>
         
       </nav>

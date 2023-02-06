@@ -1,4 +1,5 @@
 import Features from "./Features";
 import Hero from "./Hero";
+import ProductListsCategoriesGrid from "./ProductCategories";
 
-export {Features, Hero}
+export {Features, Hero, ProductListsCategoriesGrid}

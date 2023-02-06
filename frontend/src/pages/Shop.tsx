@@ -32,6 +32,7 @@ const Shop = () => {
   return (
     <section className='p-10 ' >
       <Categorize/>
+      <hr className='border-1 border-gray-500 m-2'/>
       <div className="grid sm:grid-cols-3 lg:grid-cols-4 gap-4 place-items-center">
         {loading && <Loader/>}
       {   products.map(product=>{

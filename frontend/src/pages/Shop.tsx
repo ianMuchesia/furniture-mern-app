@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import axios from 'axios'
-import Card from '../components/Card'
+import { Card, Categorize } from '../components/ShopComponents'
 import { Product } from '../@types/type'
 import Loader from '../components/Loader'
 const Shop = () => {
@@ -30,14 +30,17 @@ const Shop = () => {
     console.log(products)
     
   return (
-    <div  className="grid sm:grid-cols-3 lg:grid-cols-4 gap-4 place-items-center">
+    <section className='p-10 ' >
+      <Categorize/>
+      <div className="grid sm:grid-cols-3 lg:grid-cols-4 gap-4 place-items-center">
         {loading && <Loader/>}
       {   products.map(product=>{
             return <Card key={product._id} product={product}/> 
         })}
+        </div>
         
        
-    </div>
+    </section>
   )
 }
 

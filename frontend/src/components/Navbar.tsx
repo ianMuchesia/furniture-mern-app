@@ -7,9 +7,10 @@ import {
   AiOutlineClose
 } from "react-icons/ai";
 import logo from "../assets/logo.jpg"
+import { NavLink } from "react-router-dom";
 
 const styles = {
-  links: `my-3 md:my-0 mx-2 xl:mx-4 hover:underline hover:text-lg transition duration-500 ease-out hover:ease-in hover:text-red-500 xl:mx-4 xl:text-xl`,
+  links: `my-3 md:my-0 mx-2 xl:mx-4 hover:underline hover:text-lg transition duration-500 ease-out hover:ease-in hover:text-red-500 xl:mx-4 xl:text-xl `,
 };
 
 const Navbar = () => {
@@ -32,10 +33,10 @@ const Navbar = () => {
           </div>
               <ul className="hidden md:flex justify-evely">
           
-          <li className={styles.links}>Home</li>
-            <li className={styles.links}>Shop</li>
-            <li className={styles.links}>About</li>
-            <li className={styles.links}>Contact</li>
+          <li className={ styles.links}><NavLink to="/">Home</NavLink></li>
+            <li className={styles.links}><NavLink to="Shop">Shop</NavLink></li>
+            <li className={styles.links}><NavLink to="About">About</NavLink></li>
+            <li className={styles.links}><NavLink to="Contact">Contact</NavLink></li>
             
           </ul>
           

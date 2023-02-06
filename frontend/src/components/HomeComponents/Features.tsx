@@ -1,9 +1,9 @@
 import React from "react";
 import {FcCustomerSupport, FcShipped, FcSynchronize, FcApproval} from 'react-icons/fc'
-import SofaSet from "../assets/sofaset.jpg"
+import { sofaset } from "../../assets";
 const Features = () => {
   return (
-    <section className="mt-48 dark:bg-gray-800 dark:text-gray-100 sm:mt-64 md:mt-[360px] lg:mt-[480px] xl:mt-[570px]">
+    <section className=" dark:bg-gray-800 dark:text-gray-100 ]">
       <div className="grid md:grid-cols-2 lg:mx-24 place-items-center">
         <div className="grid sm:grid-cols-2 dark:bg-violet-400 dark:text-gray-900">
             {/* card 1 */}
@@ -86,7 +86,7 @@ const Features = () => {
         <div className=" dark:bg-gray-800">
           <div className="p-8 ">
             <img
-              src={SofaSet}
+              src={sofaset}
               alt=""
               className="rounded-lg object-fill shadow-lg dark:bg-gray-500  sm:min-h-96 max-h-[420px]"
             />

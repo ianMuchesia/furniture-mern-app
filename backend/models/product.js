@@ -56,6 +56,10 @@ const productSchema = new mongoose.Schema({
     type: Number,
     required: [true, "Number of products in stock must be provided"],
   }, 
+  createdAt:{
+    type:Date,
+    default:Date.now()
+  }
 });
 
 module.exports = mongoose.model("Product", productSchema);

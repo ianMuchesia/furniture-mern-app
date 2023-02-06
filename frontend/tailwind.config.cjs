@@ -92,6 +92,6 @@ module.exports = {
     // backgroundColor: ['active'],
     extend: {},
   },
-  plugins:  [require("daisyui")],
+  plugins:  [require("daisyui"),require('@tailwindcss/forms')], 
 };
 

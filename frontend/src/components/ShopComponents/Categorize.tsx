@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Categorize = () => {
+    const [priceRange, setPriceRange] = useState(49999)
   return (
-    <div className='flex flex-col gap-2 items-center'>
+    <form className='flex flex-col gap-3 items-center'>
         <input
         type="text"
         placeholder="search"
@@ -16,20 +17,26 @@ const Categorize = () => {
         <button type='button'>Office</button>
         <button type='button'>Dining Room</button>
         <label htmlFor='Brand'>Brand</label>
-        <option id="Brand">
-            <select>Kitchen Co</select>
-            <select>Outdoor Co</select>
-            <select>Furniture Co</select>
+        <select id="Brand">
+            <option>All</option>
+            <option>Kitchen Co</option>
+            <option>Outdoor Co</option>
+            <option>Furniture Co</option>
           
-        </option>
-        <label htmlFor='price'>Price</label>
+        </select>
+        <div>
+        <label htmlFor='price' className='text-blue-700'>Price Range</label>
+        <p>Ksh.{priceRange}</p>
         <input
         type="range"
         id="price"
-        min="0"
-        max="500000"
+        min={0}
+        max={500000}
+        value={priceRange}
+        onChange={(e)=>setPriceRange(parseInt(e.target.value))}
         className=''/> 
     </div>
+    </form>
   )
 }
 

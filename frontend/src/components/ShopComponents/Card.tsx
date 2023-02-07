@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react'
 
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import axios from 'axios'
-import { Product } from '../../@types/type'
+import { ProductModel } from '../../@types/type'
 import { Link } from 'react-router-dom'
 interface Props{
-    product:Product;
+    product:ProductModel;
 }
 const Card = ({product}:Props) => {
 

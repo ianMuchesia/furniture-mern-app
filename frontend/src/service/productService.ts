@@ -6,7 +6,7 @@ export default {
     const response = await API().get("products");
     return response.data.msg;
   },
-  async getSingleProduct(productID:number){
+  async getSingleProduct(productID:string){
     const response = await API().get('products')
     return response.data.msg.find((product:ProductModel)=>product._id === productID)
   }

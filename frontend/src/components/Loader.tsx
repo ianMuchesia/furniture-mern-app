@@ -2,7 +2,7 @@ import React from 'react'
 import './Loader.css'
 const Loader = () => {
   return (
-    <div>
+    <div className='grid place-items-center'>
     <div className="socket">
         <div className="gel center-gel">
             <div className="hex-brick h1"></div>

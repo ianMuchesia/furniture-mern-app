@@ -18,7 +18,7 @@ export const fetchProducts=():ThunkAction<void,RootState,unknown,AnyAction>=>{
     }
 }
 
-export const fetchSingleProduct =(productID: number):ThunkAction<void,RootState,unknown,AnyAction>=>{
+export const fetchSingleProduct =(productID: string):ThunkAction<void,RootState,unknown,AnyAction>=>{
     return async(dispatch, getState)=>{
         const response: ProductModel = await ProductService.getSingleProduct(productID)
         dispatch(productActions.setSingleProduct(response))

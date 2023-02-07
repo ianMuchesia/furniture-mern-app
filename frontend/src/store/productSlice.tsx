@@ -4,12 +4,14 @@ import { ProductModel, ProductArrayModel } from "../@types/type";
 const initialProductState: ProductArrayModel = {
   allProducts: [],
   singleProduct: {
-    _id: 0,
+    _id: "",
     name: "",
     description: "",
     price: 0,
     featured: false,
     imageUrl: "",
+    brand:"",
+    rating:0,
   },
 };
 

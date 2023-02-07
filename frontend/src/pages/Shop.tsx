@@ -19,12 +19,17 @@ const Shop = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    let isMounted= true;
     setLoading(true);
-    dispatch(fetchProducts())
+    if (isMounted){
+      dispatch(fetchProducts())
+    }
+    
     setLoading(false)
+    return ()=>{isMounted = false}
 }, []);
 
-  console.log(allProducts);
+  
 
  
   return (
@@ -42,13 +47,13 @@ const Shop = () => {
       
       <div className="grid sm:grid-cols-3 lg:grid-cols-4 gap-4 place-items-center">
         {loading && <Loader />}
-        {gridView && allProducts.map((product) => {
+        {gridView && allProducts?.map((product) => {
           return <Card key={product._id} product={product} />;
         })}
         
       </div>
       <div>
-        {!gridView && allProducts.map(product=>{
+        {!gridView && allProducts?.map(product=>{
           return <CardDescription key={product._id} product={product}/>
         })}
       </div>

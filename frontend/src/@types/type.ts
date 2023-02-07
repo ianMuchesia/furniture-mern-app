@@ -1,4 +1,4 @@
-export interface Product{
+export interface ProductModel{
     _id: number;
     name: string;
     description: string;
@@ -8,6 +8,7 @@ export interface Product{
     
 } 
 export interface ProductArrayModel{
-    allProducts : Product[],
+    allProducts : ProductModel[];
+    singleProduct:ProductModel;
    
 }

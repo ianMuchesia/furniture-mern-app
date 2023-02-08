@@ -26,9 +26,11 @@ export interface cartProductModel{
     rating:number;
     quantity:number;
     totalPrice:number;
+    
 }
 export interface cartModel{
     itemsList:cartProductModel[];
     totalQuantity:number;
+    subTotal:number;
     showCart:boolean;
 }

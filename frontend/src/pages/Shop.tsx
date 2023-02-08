@@ -4,6 +4,7 @@ import {
   Card,
   CardDescription,
   Categorize,
+  Pagination,
 } from "../components/ShopComponents";
 
 import Loader from "../components/Loader";
@@ -58,6 +59,7 @@ const Shop = () => {
         })}
       </div>
       </div>
+      <Pagination/>
     </section>
   );
 };

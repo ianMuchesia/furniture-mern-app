@@ -13,6 +13,7 @@ export interface ProductModel{
 export interface ProductArrayModel{
     allProducts : ProductModel[];
     singleProduct:ProductModel;
+    featuredProducts:ProductModel[];
    
 }
 export interface cartProductModel{

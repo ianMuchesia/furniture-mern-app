@@ -3,6 +3,7 @@ import { ProductModel, ProductArrayModel } from "../@types/type";
 
 const initialProductState: ProductArrayModel = {
   allProducts: [],
+  featuredProducts:[],
   singleProduct: {
     _id: "",
     name: "",
@@ -12,6 +13,7 @@ const initialProductState: ProductArrayModel = {
     imageUrl: "",
     brand:"",
     rating:0,
+    category:"",
   },
 };
 
@@ -24,6 +26,9 @@ const productSlice = createSlice({
     },
     setSingleProduct(state, action: PayloadAction<ProductModel>) {
       state.singleProduct = action.payload;
+    },
+    setFeaturedProduct(state, action: PayloadAction<ProductModel[]>) {
+      state.featuredProducts = action.payload;
     },
   },
 });

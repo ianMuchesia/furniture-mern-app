@@ -24,3 +24,12 @@ export const fetchSingleProduct =(productID: string):ThunkAction<void,RootState,
         dispatch(productActions.setSingleProduct(response))
     }
 }
+
+export const fetchFeaturedProducts =():ThunkAction<void,RootState,unknown,AnyAction>=>{
+    return async(dispatch, getState)=>{
+        if(getState().products.allProducts.length === 0){
+        const response: ProductModel[] = await ProductService.getFeaturedProducts();
+        dispatch(productActions.setFeaturedProduct(response))
+        }
+    }
+}

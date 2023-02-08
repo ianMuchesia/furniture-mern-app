@@ -3,6 +3,7 @@ import ScrollToTop from "./utils/scrollToTop";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Shop, About, Contact, Home, SingleProduct, Cart, Checkout } from "./pages";
+import Success from "./pages/Success";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="Contact" element={<Contact />} />
           <Route path="Cart" element={<Cart />} />
           <Route path="Checkout" element={<Checkout />} />
+          <Route path="Success" element={<Success />} />
         </Routes>
       </main>
 

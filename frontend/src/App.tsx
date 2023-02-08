@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import ScrollToTop from "./utils/scrollToTop";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Shop, About, Contact, Home, SingleProduct, Cart, Checkout } from "./pages";
@@ -7,6 +7,7 @@ import { Shop, About, Contact, Home, SingleProduct, Cart, Checkout } from "./pag
 function App() {
   return (
     <BrowserRouter>
+    <ScrollToTop/>
       <Navbar />
       <main>
         <Routes>

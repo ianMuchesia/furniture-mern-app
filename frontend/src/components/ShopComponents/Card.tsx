@@ -1,13 +1,40 @@
 import React, { useState, useEffect } from 'react'
-
+import cartSlice from '../../store/cartSlice'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import axios from 'axios'
 import { ProductModel } from '../../@types/type'
 import { Link } from 'react-router-dom'
+import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks'
 interface Props{
     product:ProductModel;
 }
 const Card = ({product}:Props) => {
+
+   const dispatch = useAppDispatch()
+
+  const { addToCart } = cartSlice.actions;
+
+  const cartItems = useAppSelector(state=>state.cart.itemsList)
+
+  useEffect(()=>{
+    
+  },[]) 
+
+   const handleAddToCart=(e:React.SyntheticEvent)=>{
+    e.preventDefault()
+    e.stopPropagation()
+    const {name, _id, price, imageUrl, rating} = product
+    dispatch(addToCart({
+      name,
+      _id,
+      price,
+      imageUrl,
+      rating,
+    }))
+    
+   
+  }
+  
 
    
   return (
@@ -50,13 +77,15 @@ const Card = ({product}:Props) => {
 
     <p className="mt-1.5 text-sm text-gray-700">Ksh. {(product.price).toLocaleString()}</p>
 
-    <form className="mt-4">
+    <div className="mt-4">
       <button
-        className="block w-full p-4 text-sm font-medium transition bg-yellow-400 rounded hover:scale-105"
+      type='button'
+        className="block w-full p-4 text-sm font-medium transition bg-purple-800 rounded text-white hover:scale-105"
+      onClick={handleAddToCart}
       >
         Add to Cart
       </button>
-    </form>
+    </div>
   </div>
 </Link>
 

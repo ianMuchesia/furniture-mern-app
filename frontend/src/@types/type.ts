@@ -7,6 +7,7 @@ export interface ProductModel{
     imageUrl:string;
     brand:string;
     rating:number;
+    category:string;
     
 } 
 export interface ProductArrayModel{
@@ -17,11 +18,11 @@ export interface ProductArrayModel{
 export interface cartProductModel{
     _id: string;
     name: string;
-    description: string;
+    
     price: number;
-    featured: boolean;
+    
     imageUrl:string;
-    brand:string;
+    
     rating:number;
     quantity:number;
     totalPrice:number;

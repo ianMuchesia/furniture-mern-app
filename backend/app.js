@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 //cors
 var cors = require('cors');
-app.use(cors({origin: 'http://localhost:5173'}));
+app.use(cors())
 //database
 const connectDB = require('./database/connectDB')
 

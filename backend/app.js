@@ -27,7 +27,7 @@ app.use(errorMiddleWare)
 //server
 const start = async()=>{
     try {
-        await connectDB(process.env.MONGO_URI)
+        connectDB(process.env.MONGO_URI)
         app.listen(port,()=>{console.log(`server listening on port ${port}`)})
     } catch (error) {
         console.log(error)        

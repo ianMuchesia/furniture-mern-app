@@ -7,8 +7,8 @@ const getSingleProduct = async (req, res) => {
   res.status(200).json({ msg: product });
 };
 
-const getAllProducts = async (req, res) => {
-  const { featured, category, search, sort, fields, numericFilters } = req.query;
+const getAllProductsByCategory = async (req, res) => {
+  const { featured, category, search, sort, fields, numericFilters , page} = req.query;
 
   const queryObject = {};
   //featured
@@ -40,7 +40,7 @@ const getAllProducts = async (req, res) => {
         queryObject[field] = {[operator]:Number(value)}
        }
     })
-    console.log(queryObject)
+    //console.log(queryObject)
   }
 
   let result = Product.find(queryObject);
@@ -55,14 +55,17 @@ const getAllProducts = async (req, res) => {
     const fieldList = fields.split(",").join(" ");
     result = result.select(fieldList);
   }
-  //setting up page functionality
-  const page = Number(req.query.page) || 1;
-  const limit = Number(req.query.limit) || 9;
-  const skip = (page - 1) * limit;
-
-  result = result.skip(skip).limit(limit);
+  //setting up pagination functionality
+  if(page){
+    const pagination = Number(page);
+    const limit = Number(req.query.limit) || 9;
+    const skip = (pagination - 1) * limit;
+  
+    result = result.skip(skip).limit(limit);  
+  }
+  
   const products = await result;
   res.status(200).json({ msg: products, nbHits: products.length });
 };
 
-module.exports = { getAllProducts, getSingleProduct };
+module.exports = { getAllProductsByCategory, getSingleProduct };

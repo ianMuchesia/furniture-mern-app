@@ -28,16 +28,14 @@ export default {
       console.log(error);
     }
   },
-  async getProductsByCategories(pagination: number, category:string) {
+  async getProductsByCategories(pagination: number) {
     console.log(arguments)
     try {
       let endpoint = `products?`;
       if (pagination) {
-        endpoint += `&page=${pagination}`;
+        endpoint += `page=${pagination}`;
       }
-      if (category) {
-        endpoint += `$category=${category}`;
-      }
+      
       console.log(endpoint)
       const response = await API().get(endpoint);
       return response.data.msg;

@@ -4,6 +4,7 @@ import { ProductModel, ProductArrayModel } from "../@types/type";
 const initialProductState: ProductArrayModel = {
   allProducts: [],
   featuredProducts:[],
+  categoryProducts:[],
   singleProduct: {
     _id: "",
     name: "",
@@ -29,6 +30,9 @@ const productSlice = createSlice({
     },
     setFeaturedProduct(state, action: PayloadAction<ProductModel[]>) {
       state.featuredProducts = action.payload;
+    },
+    setCategoryProduct(state, action: PayloadAction<ProductModel[]>) {
+      state.categoryProducts = action.payload;
     },
   },
 });

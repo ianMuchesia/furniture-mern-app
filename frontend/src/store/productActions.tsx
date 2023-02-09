@@ -33,3 +33,11 @@ export const fetchFeaturedProducts =():ThunkAction<void,RootState,unknown,AnyAct
         }
     }
 }
+export const fetchCategoryProducts =(pagination:number, category:string):ThunkAction<void,RootState,unknown,AnyAction>=>{
+    return async(dispatch, getState)=>{
+        if(getState().products.allProducts.length === 0){
+        const response: ProductModel[] = await ProductService.getProductsByCategories(pagination, category);
+        dispatch(productActions.setCategoryProduct(response))
+        }
+    }
+}

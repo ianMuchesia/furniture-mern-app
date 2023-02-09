@@ -14,6 +14,7 @@ export interface ProductArrayModel{
     allProducts : ProductModel[];
     singleProduct:ProductModel;
     featuredProducts:ProductModel[];
+    categoryProducts:ProductModel[];
    
 }
 export interface cartProductModel{

@@ -6,6 +6,7 @@ import { Shop, About, Contact, Home, SingleProduct, Cart, Checkout } from "./pag
 import Success from "./pages/Success";
 
 function App() {
+ 
   return (
     <BrowserRouter>
     <ScrollToTop/>

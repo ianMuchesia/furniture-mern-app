@@ -11,10 +11,10 @@ const connectDB = require('./database/connectDB')
 //router
 const productRouter = require('./routes/product')
 const notFoundMiddleWare = require('./middleware/notFound')
-const errorMiddleWare = require('./middleware/error-handler')
+const errorHandlerMiddleWare = require('./middleware/error-handler')
 const authRoute = require('./routes/auth')
 //port
-const port = process.env.PORT 
+const port = process.env.PORT || 3000
 
 //middleware
 app.use(express.json())
@@ -23,7 +23,7 @@ app.use(express.json())
 app.use("/api/v1/products",productRouter)
 app.use('/api/v1', authRoute)
 app.use(notFoundMiddleWare)
-app.use(errorMiddleWare)
+app.use(errorHandlerMiddleWare)
 
 //server
 const start = async()=>{

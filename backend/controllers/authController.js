@@ -1,5 +1,5 @@
 const { StatusCodes } = require("http-status-codes");
-const User = require("../models/user");
+const User = require("../models/User");
 
 const login = async (req, res) => {
   const { CustomerEmail, CustomerPassword } = req.body;
@@ -41,9 +41,9 @@ const login = async (req, res) => {
 
 
 const register = async(req, res)=>{
-    const { firstName,lastName, CustomerEmail, CustomerPassword } = req.body; 
+    const { firstName,lastName, email, password } = req.body; 
 
-    if (!CustomerEmail) {
+    if (!email) {
         return res
           .status(StatusCodes.BAD_REQUEST)
           .json({ error: 'You must enter an email address.' });
@@ -53,21 +53,26 @@ const register = async(req, res)=>{
         return res.status(StatusCodes.BAD_REQUEST).json({ error: 'You must enter your full name.' });
       }
   
-      if (!CustomerPassword) {
+      if (!password) {
         return res.status(StatusCodes.BAD_REQUEST).json({ error: 'You must enter a password.' });
       }
 
-      const existingCustomer = await User.findOne({ CustomerEmail });
+      const existingEmail = await User.findOne({ email });
 
-      if (existingCustomer) {
+      if (existingEmail) {
         return res
           .status(StatusCodes.BAD_REQUEST)
           .json({ error: 'That email address is already in use.' });
       }
 
-      const customer = await User.create({ ...req.body });
+      const isFirstAccount = (await User.countDocuments({})) === 0;
+      const role = isFirstAccount ? "admin" : "user";
+  
+      const user = await User.create({ firstName , lastName , email , password , role });
 
-      const token = customer.createJWT();
+      const tokenUser = createTokenUser(user);
+      
+      
       res.status(StatusCodes.CREATED).json({ user: { name: customer.firstName }, token });
   
 }

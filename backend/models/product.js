@@ -1,15 +1,9 @@
 const mongoose = require("mongoose");
-const slug = require('mongoose-slug-generator');
+
 
 //Slugs are used in web development and search engine optimization (SEO) to create more readable and user-friendly URLs.
 
-const options = {
-  separator: '-',
-  lang: 'en',
-  truncate: 120
-};
 
-mongoose.plugin(slug, options);
 
 const productSchema = new mongoose.Schema({
   name: {

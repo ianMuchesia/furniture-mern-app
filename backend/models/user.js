@@ -5,22 +5,22 @@ const jwt = require('jsonwebtoken')
 const Schema = mongoose.Schema
 
 
-const userSchema = new Schema({
+const UserSchema = new Schema({
     firstName:{
         type:String,
-        required:[true , "Customer Name is required"],
+        required:[true , "Customer First Name is required"],
         minlength: 3,
         maxlenght: 50,
 
     },
     lastName:{
         type:String,
-        required:[true , "Customer Name is required"],
+        required:[true , "Customer Last Name is required"],
         minlength: 3,
         maxlenght: 50,
 
     },
-    CustomerEmail:{
+    email:{
         type: String,
         match: [
             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
@@ -29,40 +29,35 @@ const userSchema = new Schema({
           unique: true,
 
     },
-    CustomerPassword:{
+    password:{
         type: String,
         required: [ true, "please provide password"],
         minlength: 6
     },
     avatar:{
         type:String,
-    }
+    },
+    role: {
+        type: String,
+        enum: ['admin', 'user'],
+        default: 'user',
+      },
 },
 {timestamps:true})
 
 
-userSchema.pre("save", async function(next){
-    const salt = await bcrypt.genSalt(10);
-    this.CustomerPassword = await bcrypt.hash(this.CustomerPassword, salt)
-    next()
-})
+UserSchema.pre("save", async function (next) {
+    if (!this.isModified('password')) return;
+      const salt = await bcrypt.genSalt(10);
+      this.password = await bcrypt.hash(this.password, salt);
+      next();
+    });
 
-userSchema.methods.createJWT = function(){
-    return jwt.sign(
-        
-           { userId: this._id, name: this.firstName},
-            process.env.JWT_SECRET,
-            {expiresIn : process.env.JWT_LIFETIME}
-        
-    )
-}
+UserSchema.methods.comparePassword = async function (candidatePassword) {
+    const isMatch = await bcrypt.compare(candidatePassword, this.password);
+    return isMatch;
+  };
 
-userSchema.methods.comparePassword = async function(candidatePassword){
-    const isMatch = await bcrypt.compare(candidatePassword, this.CustomerPassword);
-    return isMatch
-    
-    }
-
-const User = mongoose.model('User' , userSchema)
+const User = mongoose.model('User' , UserSchema)
 
 module.exports = User

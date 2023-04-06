@@ -1,83 +1,100 @@
 const { StatusCodes } = require("http-status-codes");
 const User = require("../models/User");
-
+const {createTokenUser  , attachCookiesToResponse} = require('../utils')
 const login = async (req, res) => {
-  const { CustomerEmail, CustomerPassword } = req.body;
+  try {
+    const { email, password } = req.body;
 
-  if (!CustomerEmail) {
+  if (!email) {
     return res
       .status(StatusCodes.BAD_REQUEST)
       .json({ error: "You must enter an email address." });
   }
 
-  if (!CustomerPassword) {
+  if (!password) {
     return res
       .status(StatusCodes.BAD_REQUEST)
       .json({ error: "You must enter a password." });
   }
 
-  const customer = await User.findOne({ CustomerEmail });
+  const user = await User.findOne({ email });
 
-
-  if (!customer) {
+  if (!user) {
     return res
       .status(StatusCodes.NOT_FOUND)
-      .send({ error: "No user found for this email address." });
+      .send({ error: "No account available for this email address." });
   }
 
-  const isPasswordCorrect = await customer.comparePassword(CustomerPassword);
+  const isPasswordCorrect = await user.comparePassword(password);
 
-  
   if (!isPasswordCorrect) {
-    throw new UnauthenticatedError(
-      "Invalid Creedentials , please check your email or password"
-    );
+    return res.status(StatusCodes.UNAUTHORIZED).json({msg:"Invalid details please check your email or password"})
   }
 
-  const token = customer.createJWT();
-  res.status(StatusCodes.OK).json({ user: { name: customer.firstName}, token });
+  const tokenUser = createTokenUser(user);
+  
+  attachCookiesToResponse({ res, user: tokenUser });
+
+  res.status(StatusCodes.CREATED).json({ success: true, user: tokenUser });
+  } catch (error) {
+    
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({msg:"something wrong happened, try again later"})
+  }
 };
 
-
-
-const register = async(req, res)=>{
-    const { firstName,lastName, email, password } = req.body; 
+const register = async (req, res) => {
+  try {
+    const { firstName, lastName, email, password } = req.body;
 
     if (!email) {
-        return res
-          .status(StatusCodes.BAD_REQUEST)
-          .json({ error: 'You must enter an email address.' });
-      }
+      return res
+        .status(StatusCodes.BAD_REQUEST)
+        .json({ msg: "You must enter an email address." });
+    }
   
-      if (!firstName || !lastName) {
-        return res.status(StatusCodes.BAD_REQUEST).json({ error: 'You must enter your full name.' });
-      }
+    if (!firstName || !lastName) {
+      return res
+        .status(StatusCodes.BAD_REQUEST)
+        .json({ msg: "You must enter your full name." });
+    }
   
-      if (!password) {
-        return res.status(StatusCodes.BAD_REQUEST).json({ error: 'You must enter a password.' });
-      }
-
-      const existingEmail = await User.findOne({ email });
-
-      if (existingEmail) {
-        return res
-          .status(StatusCodes.BAD_REQUEST)
-          .json({ error: 'That email address is already in use.' });
-      }
-
-      const isFirstAccount = (await User.countDocuments({})) === 0;
-      const role = isFirstAccount ? "admin" : "user";
+    if (!password) {
+      return res
+        .status(StatusCodes.BAD_REQUEST)
+        .json({ msg: "You must enter a password." });
+    }
   
-      const user = await User.create({ firstName , lastName , email , password , role });
-
-      const tokenUser = createTokenUser(user);
-      
-      
-      res.status(StatusCodes.CREATED).json({ user: { name: customer.firstName }, token });
+    const existingEmail = await User.findOne({ email });
   
-}
-
+    if (existingEmail) {
+      return res
+        .status(StatusCodes.BAD_REQUEST)
+        .json({ msg: "That email address is already in use." });
+    }
+  
+    const isFirstAccount = (await User.countDocuments({})) === 0;
+    const role = isFirstAccount ? "admin" : "user";
+  
+    const user = await User.create({
+      firstName,
+      lastName,
+      email,
+      password,
+      role,
+    });
+  
+    const tokenUser = createTokenUser(user);
+  
+    attachCookiesToResponse({ res, user: tokenUser });
+  
+    res.status(StatusCodes.CREATED).json({ success: true, user: tokenUser });
+  } catch (error) {
+    
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({msg:"something wrong happened, try again later"})
+  }
+};
 
 module.exports = {
-    login, register
-}
+  login,
+  register,
+};

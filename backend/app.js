@@ -20,6 +20,7 @@ const connectDB = require('./database/connectDB')
 
 //routers
 const authRoute = require('./routes/auth')
+const userRouter = require('./routes/userRouter')
 const productRouter = require('./routes/productRouter')
 
 
@@ -50,6 +51,7 @@ app.use(cookieParser(process.env.JWT_SECRET));
 
 //routes
 app.use('/api/v1/auth', authRoute)
+app.use('/api/v1/users', userRouter)
 app.use("/api/v1/products",productRouter)
 
 

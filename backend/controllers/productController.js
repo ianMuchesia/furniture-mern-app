@@ -1,10 +1,23 @@
 const Product = require("../models/Product");
 
 const getSingleProduct = async (req, res) => {
-  const { id: ProductID } = req.params;
+  try {
+    const {id:productId} = req.params
+  const product = await Product.findOne({_id:productId})
+  if(!product){
+    return res.status(StatusCodes.NOT_FOUND).json({msg:`no product found matching id:${productId}`})
 
-  const product = await Product.findOne({ _id: ProductID });
-  res.status(200).json({ msg: product });
+  }
+  res.status(StatusCodes.OK).json({
+    success:true,
+    product
+  })
+  } catch (error) {
+    console.log(error)
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({msg:`something wrong happened try again later`})
+  }
+  
+
 };
 
 const getAllProductsByCategory = async (req, res) => {
@@ -65,7 +78,7 @@ const getAllProductsByCategory = async (req, res) => {
   }
   
   const products = await result;
-  res.status(200).json({ msg: products, nbHits: products.length });
+  res.status(200).json({ success:true, msg: products, nbHits: products.length });
 };
 
 module.exports = { getAllProductsByCategory, getSingleProduct };

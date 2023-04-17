@@ -127,6 +127,13 @@ const forgotPassword = async (req, res) => {
         msg: `user with email:${email} does not exist`,
       });
     }
+    //delete token if it exists in the database
+    //for example it may expire but still exist in the database
+    let token = await Token.findOne({ userId: user._id });
+
+    if (token) {
+      await token.deleteOne();
+    }
 
     //create reset token
     let resetToken = crypto.randomBytes(32).toString("hex") + user._id;
@@ -162,27 +169,61 @@ const forgotPassword = async (req, res) => {
       <p>Home Furnish</p>
       `;
 
-      //subject
-      const subject = "Password Reset Request "
-      const send_to = user.email
-      const sent_from = process.env.EMAIL_USER
+    //subject
+    const subject = "Password Reset Request ";
+    const send_to = user.email;
+    const sent_from = process.env.EMAIL_USER;
 
-      await sendEmail(subject, message , send_to, sent_from )
+    await sendEmail(subject, message, send_to, sent_from);
 
-      res.status(StatusCodes.OK).json({success:true , msg: "Reset Email Sent"})
-
-  
+    res.status(StatusCodes.OK).json({ success: true, msg: "Reset Email Sent" });
   } catch (error) {
     console.log(error);
     return res
-    .status(StatusCodes.INTERNAL_SERVER_ERROR)
-    .json({ msg: "something wrong happened, try again later" });
+      .status(StatusCodes.INTERNAL_SERVER_ERROR)
+      .json({ msg: "something wrong happened, try again later" });
   }
 };
 
+const resetPassword = async (req, res) => {
+  try {
+    const { password } = req.body;
+    const { resetToken } = req.params;
+
+    // Hash token , then compare to Token in database
+    const hashedToken = crypto
+      .createHash("sha256")
+      .update(resetToken)
+      .digest("hex");
+
+    //find the token in the database
+    const userToken = await Token.findOne({ 
+      token: hashedToken ,
+      expiresAt:{$gt: Date.now()}
+    
+    });
+
+    if(!userToken){
+      return res.status(StatusCodes.NOT_FOUND).json({
+        msg: "Invalid or expired Token"
+      })
+    }
+
+    //Find user
+
+    const user = await User.findOne({_id: userToken.userId})
+
+    user.password = password
+
+    await user.save()
+
+     res.status(StatusCodes.CREATED).json({success: true , msg: "Password reset was succesfull, please Login"})
+  } catch (error) {}
+};
 module.exports = {
   login,
   register,
   logoutUser,
   forgotPassword,
+  resetPassword,
 };

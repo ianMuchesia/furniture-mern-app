@@ -67,7 +67,7 @@ const updateUser = async (req, res) => {
     if (!user) {
       return res
         .status(StatusCodes.NOT_FOUND)
-        .json({ success: false, msg: `user with id:${userID} not found` });
+        .json({ success: false, msg: `user with id:${userId} not found` });
     }
    
     user.firstName = firstName
@@ -89,9 +89,39 @@ const updateUser = async (req, res) => {
   }
 };
 
+const updatePassword = async (req, res)=>{
+  try {
+    const {oldPassword , newPassword } = req.body
+
+    if(!oldPassword || !newPassword){
+      return res.status(StatusCodes.BAD_REQUEST).json({msg:"please provide both values"})
+
+     
+    }
+
+    const user = await User.findOne({ _id: req.user.userId });
+
+    const isPasswordCorrect = await user.comparePassword(oldPassword);
+
+    if (!isPasswordCorrect) {
+      return res.status(StatusCodes.UNAUTHORIZED).json({msg:'Invalid Credentials'})
+    }
+
+    user.password = newPassword;
+
+    await user.save();
+    res.status(StatusCodes.OK).json({success:true, msg: 'Success! Password Updated.' });
+  
+  } catch (error) {
+    
+  }
+}
+
+
 module.exports = {
   getAllUsers,
   getSingleUser,
   showCurrentUser,
   updateUser,
+  updatePassword
 };

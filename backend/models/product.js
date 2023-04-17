@@ -83,7 +83,12 @@ const ProductSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
+ProductSchema.virtual("reviews", {
+  ref: "Review",
+  localField: "_id",
+  foreignField: "product",
+  justOne: false,
+});
 
 
 ProductSchema.pre("remove", async function (next) {

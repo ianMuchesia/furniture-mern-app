@@ -96,11 +96,17 @@ const register = async (req, res) => {
 
 const logoutUser =  async(req , res) =>{
   try {
-    res.send(":logout user")
+    res.cookie('token', 'logout', {
+      httpOnly: true,
+      expires: new Date(Date.now() + 1000),//expiresin one second
+    });
+    res.status(StatusCodes.OK).json({success:true, msg: 'user logged out!' });
   } catch (error) {
-    
+    return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({msg:"something wrong happened, try again later"})
   }
 }
+
+
 
 module.exports = {
   login,

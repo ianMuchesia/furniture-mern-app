@@ -1,7 +1,7 @@
 const {UnauthenticatedError} = require('../errors');
 const {StatusCodes} = require('http-status-codes')
 
-const chechPermissions = (requestUser, resourceUserId) => {
+const checkPermissions = (requestUser, resourceUserId) => {
     if (requestUser.role === 'admin') return;
     if (requestUser.userId === resourceUserId.toString()) return;
     throw new UnauthenticatedError(
@@ -9,4 +9,4 @@ const chechPermissions = (requestUser, resourceUserId) => {
     );
 };
 
-module.exports = chechPermissions;
+module.exports = checkPermissions;

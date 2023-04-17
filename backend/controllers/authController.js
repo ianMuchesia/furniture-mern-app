@@ -94,7 +94,16 @@ const register = async (req, res) => {
   }
 };
 
+const logoutUser =  async(req , res) =>{
+  try {
+    res.send(":logout user")
+  } catch (error) {
+    
+  }
+}
+
 module.exports = {
   login,
   register,
+  logoutUser
 };

@@ -58,9 +58,11 @@ const Navbar = () => {
             <span className="text-4xl mx-1 lg:mx-3">
               <AiOutlineSearch />
             </span>
-            <span className="text-4xl mx-1 lg:mx-3">
-              <FiLogIn />
-            </span>
+            <NavLink to="/Login">
+            
+              <FiLogIn  className="text-4xl mx-1 lg:mx-3"/>
+            
+            </NavLink>
             <NavLink to="/Cart" className="relative flex">
               <span className="text-4xl mx-1 lg:mx-3">
                 <AiOutlineShoppingCart />

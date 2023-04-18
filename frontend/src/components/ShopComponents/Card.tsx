@@ -73,7 +73,7 @@ const Card = ({product}:Props) => {
       New
     </span> */}
 
-    <h3 className="mt-4 text-lg font-medium text-gray-900">{product.name}</h3>
+    <h3 className="mt-4 text-lg font-medium text-gray-900">{product.name.slice(0,20)}...</h3>
 
     <p className="mt-1.5 text-sm text-gray-700">Ksh. {(product.price).toLocaleString()}</p>
 

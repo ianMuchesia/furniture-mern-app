@@ -10,7 +10,7 @@ import ForgotPassword from "./ForgotPassword";
 import NewPassword from "./NewPassword";
 import Profile from "./Profile";
 import SingleProduct from "./SingleProduct";
-
+import ResetPassword from "./ResetPassword";
 
 export {
   About,
@@ -24,5 +24,6 @@ export {
   ForgotPassword,
   NewPassword,
   Profile,
-  SingleProduct
+  SingleProduct,
+  ResetPassword
 };

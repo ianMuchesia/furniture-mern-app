@@ -39,12 +39,10 @@ const Navbar = () => {
             </div>
             <ul className="hidden md:flex justify-evenly">
               <li className={styles.links}>
-                <NavLink to="/" >
-                  Home
-                </NavLink>
+                <NavLink to="/">Home</NavLink>
               </li>
               <li className={styles.links}>
-                <NavLink to="/Shop">Shop</NavLink>
+                <NavLink to="/Products">Shop</NavLink>
               </li>
               <li className={styles.links}>
                 <NavLink to="/About">About</NavLink>
@@ -59,9 +57,7 @@ const Navbar = () => {
               <AiOutlineSearch />
             </span>
             <NavLink to="/Login">
-            
-              <FiLogIn  className="text-4xl mx-1 lg:mx-3"/>
-            
+              <FiLogIn className="text-4xl mx-1 lg:mx-3" />
             </NavLink>
             <NavLink to="/Cart" className="relative flex">
               <span className="text-4xl mx-1 lg:mx-3">
@@ -94,13 +90,13 @@ const Navbar = () => {
             <NavLink to="/">Home</NavLink>
           </li>
           <li className={styles.links}>
-            <NavLink to="Shop">Shop</NavLink>
+            <NavLink to="/Products">Shop</NavLink>
           </li>
           <li className={styles.links}>
-            <NavLink to="About">About</NavLink>
+            <NavLink to="/About">About</NavLink>
           </li>
           <li className={styles.links}>
-            <NavLink to="Contact">Contact</NavLink>
+            <NavLink to="/Contact">Contact</NavLink>
           </li>
         </ul>
       </nav>

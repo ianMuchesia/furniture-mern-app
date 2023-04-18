@@ -28,7 +28,7 @@ const Shop = () => {
  
 
   
-  const allProducts = useAppSelector(state=>state.products.products)
+  const allProducts = useAppSelector(state=>state.products.allProducts)
   
   useEffect(()=>{
     let isMounted = true

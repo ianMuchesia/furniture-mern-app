@@ -2,8 +2,10 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ProductModel, ProductArrayModel } from "../@types/type";
 
 const initialProductState = {
-  products : [] as ProductModel [],
+  allProducts : [] as ProductModel [],
   length : 0,
+  singleProduct: {} as ProductModel,
+  categoryProducts:  [] as ProductModel [],
 }
   
 
@@ -13,14 +15,16 @@ const productSlice = createSlice({
   initialState: initialProductState,
   reducers: {
     setProducts(state, action: PayloadAction<ProductModel[]>) {
-       state.products = action.payload
-       state.length = state.products.length
+       state.allProducts = action.payload
+       state.length = state.allProducts.length
     },
    setProductsByCategory(state, action:PayloadAction<string>){
       const category = action.payload
-      state.products = state.products.filter(product=>product.category === category)
-      state.length = state.products.length
-   }
+      state.categoryProducts = state.allProducts.filter(product=>product.category === category)
+      state.categoryProducts = state.categoryProducts.filter(product=>product._id !== category)
+      state.length = state.allProducts.length
+   },
+
     //
    
   },

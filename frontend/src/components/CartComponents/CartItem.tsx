@@ -1,5 +1,6 @@
 import React from 'react'
 import { cartProductModel } from '../../@types/type'
+import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai';
 interface Props{
     item:cartProductModel;
 }
@@ -30,17 +31,11 @@ const CartItem = ({item}:Props) => {
     </div>
 
     <div className="flex items-center justify-end flex-1 gap-2">
-      <form>
-        <label htmlFor="Line1Qty" className="sr-only"> Quantity </label>
-
-        <input
-          type="number"
-          min="1"
-         /*  value="1" */
-          id="Line1Qty"
-          className="h-8 w-12 rounded border-gray-200 bg-gray-50 p-0 text-center text-xs text-gray-600 [-moz-appearance:_textfield] focus:outline-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none"
-        />
-      </form>
+      <div className="bg-gray-200 px-2 flex justify-between gap-1 ">
+        <button className='hover:scale-110'><AiOutlinePlus/></button>
+        <h5 className=''>1</h5>
+        <button className='hover:scale-110'><AiOutlineMinus/></button>
+      </div>
 
       <button className="text-gray-600 transition hover:text-red-600">
         <span className="sr-only">Remove item</span>

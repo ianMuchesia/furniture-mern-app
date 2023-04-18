@@ -35,7 +35,7 @@ const CardDescription = ({product}:Props) => {
     <div className="relative">
      
     </div>
-    <Link to={`/Shop/${product._id}`} className="space-y-8 lg:divide-y lg:divide-gray-100">
+    <Link to={`/Products/${product._id}`} className="space-y-8 lg:divide-y lg:divide-gray-100">
       <div className="pt-8 sm:flex lg:items-end group">
         <div className="flex-shrink-0 mb-4 sm:mb-0 sm:mr-4">
           <img className=" rounded-md h-48 w-full sm:w-48 object-cover transition duration-500 group-hover:scale-105 " src={product.imageUrl} alt="text"/>

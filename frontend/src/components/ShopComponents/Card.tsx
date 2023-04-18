@@ -38,7 +38,7 @@ const Card = ({product}:Props) => {
 
    
   return (
-    <Link to={`/Shop/${product._id}`} className="relative block overflow-hidden group">
+    <Link to={`/Products/${product._id}`} className="relative block overflow-hidden group">
   <button
     className="absolute right-4 top-4 z-10 rounded-full bg-white p-1.5 text-gray-900 transition hover:text-gray-900/75"
   >

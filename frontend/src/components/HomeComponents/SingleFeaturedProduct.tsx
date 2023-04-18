@@ -10,7 +10,7 @@ interface Props{
 const SingleFeaturedProduct = ({product}:Props) => {
   return (
     <div className=''>
-      <Link to={`/Shop/${product._id}`}>
+      <Link to={`/Products/${product._id}`}>
         <div className="product-card">
           <img 
             src={product.imageUrl}

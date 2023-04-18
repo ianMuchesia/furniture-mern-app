@@ -1,7 +1,7 @@
 import About from "./About";
 import Home from "./Home";
 import Contact from "./Contact";
-import Shop from "./Shop";
+import Products from "./Products";
 import Checkout from "./Checkout";
 import Cart from "./Cart";
 import Login from "./Login";
@@ -9,13 +9,12 @@ import SignUp from "./SignUp";
 import ForgotPassword from "./ForgotPassword";
 import NewPassword from "./NewPassword";
 import Profile from "./Profile";
-
-
+import SingleProduct from "./SingleProduct";
 
 
 export {
   About,
-  Shop,
+  Products,
   Home,
   Contact,
   Checkout,
@@ -25,4 +24,5 @@ export {
   ForgotPassword,
   NewPassword,
   Profile,
+  SingleProduct
 };

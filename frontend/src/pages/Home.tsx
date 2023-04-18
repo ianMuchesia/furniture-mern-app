@@ -1,10 +1,10 @@
 import React from 'react'
-import {FeaturedProducts, Features, Hero, ProductListsCategoriesGrid} from "../components/HomeComponents"
+import {MemoizedFeaturedProducts, Features, Hero, ProductListsCategoriesGrid} from "../components/HomeComponents"
 const Home = () => {
   return (
     <section className='mx-8 '>
       <Hero/>
-      <FeaturedProducts/>
+      <MemoizedFeaturedProducts/>
       <Features/>
       <ProductListsCategoriesGrid/>
     </section>

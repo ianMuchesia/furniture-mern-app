@@ -1,6 +1,6 @@
 const express = require('express')
 const {
-     getAllOrders,
+  getAllOrders,
   getSingleOrder,
   getCurrentUserOrders,
   createOrder,

@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react'
+import useSWR from 'swr'
 import './Feature.css'
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks'
-import { fetchFeaturedProducts } from '../../store/productActions'
+import featuredProductsURl from '../../service/productService'
 import SingleFeaturedProduct from "./SingleFeaturedProduct"
-const FeaturedProducts = () => {
 
+
+export const FeaturedProducts = () => {
+
+ 
+ 
   return (
     <div>
     <div className="maylike-products-wrapper">
@@ -20,4 +25,5 @@ const FeaturedProducts = () => {
   )
 }
 
-export default FeaturedProducts
+
+export const MemoizedFeaturedProducts = React.memo(FeaturedProducts)

@@ -11,7 +11,7 @@ import { NavLink } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../hooks/reduxHooks";
 
 const styles = {
-  links: `my-3 md:my-0 mx-2 xl:mx-4 hover:underline hover:text-lg transition duration-500 ease-out hover:ease-in hover:text-red-500 xl:mx-4 xl:text-xl `,
+  links: `  md:ml-16 xl:ml-20 text-lg xl:text-xl hover:underline hover:scale-125  hover:font-bold transition duration-500 ease-in-out`,
 };
 
 const Navbar = () => {
@@ -37,9 +37,11 @@ const Navbar = () => {
 
               <h6 className="text-xs">Home Furnish</h6>
             </div>
-            <ul className="hidden md:flex justify-evely">
+            <ul className="hidden md:flex justify-evenly">
               <li className={styles.links}>
-                <NavLink to="/">Home</NavLink>
+                <NavLink to="/" >
+                  Home
+                </NavLink>
               </li>
               <li className={styles.links}>
                 <NavLink to="Shop">Shop</NavLink>
@@ -64,7 +66,9 @@ const Navbar = () => {
                 <AiOutlineShoppingCart />
               </span>
               {cartItemsQuantity > 0 && (
-                <span className="absolute right-0 top-0 rounded-full bg-red-600 w-5 h-5 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center">{cartItemsQuantity}</span>
+                <span className="absolute right-0 top-0 rounded-full bg-red-600 w-5 h-5 top right p-0 m-0 text-white font-mono text-sm  leading-tight text-center">
+                  {cartItemsQuantity}
+                </span>
               )}
             </NavLink>
             {!toggle && (

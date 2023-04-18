@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import cartSlice from '../../store/cartSlice'
+import cartSlice, { addToCart } from '../../store/cartSlice'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import axios from 'axios'
 import { ProductModel } from '../../@types/type'
@@ -12,7 +12,7 @@ const Card = ({product}:Props) => {
 
    const dispatch = useAppDispatch()
 
-  const { addToCart } = cartSlice.actions;
+
 
   const cartItems = useAppSelector(state=>state.cart.itemsList)
 

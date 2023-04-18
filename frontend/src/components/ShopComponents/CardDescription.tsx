@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { ProductModel } from '../../@types/type'
 import { useAppDispatch, useAppSelector } from '../../hooks/reduxHooks';
-import cartSlice from '../../store/cartSlice';
+import  { addToCart } from '../../store/cartSlice';
 interface Props{
   product:ProductModel;
 }
@@ -10,7 +10,7 @@ const CardDescription = ({product}:Props) => {
 
   const dispatch = useAppDispatch()
 
-  const { addToCart } = cartSlice.actions;
+  
 
   const cartItems = useAppSelector(state=>state.cart.itemsList)
 

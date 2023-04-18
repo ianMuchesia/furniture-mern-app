@@ -3,22 +3,22 @@ import { Link } from 'react-router-dom';
 import { ProductModel } from '../../@types/type';
 
 interface Props{
-    item:ProductModel;
+    product:ProductModel;
 }
 
 
-const SingleFeaturedProduct = ({item}:Props) => {
+const SingleFeaturedProduct = ({product}:Props) => {
   return (
     <div className=''>
-      <Link to={`/Shop/${item._id}`}>
+      <Link to={`/Shop/${product._id}`}>
         <div className="product-card">
           <img 
-            src={item.imageUrl}
+            src={product.imageUrl}
           
-            className="product-image w-[200px] h-[200px]"
+            className="product-image w-[150px] h-[150px] sm:h-[200px] sm:w-[200px]"
           />
-          <p className="product-name">{item.name}</p>
-          <p className="product-price">Ksh. {item.price}</p>
+          <p className="product-name">{product.name}</p>
+          <p className="product-price">Ksh. {product.price}</p>
         </div>
       </Link>
     </div>

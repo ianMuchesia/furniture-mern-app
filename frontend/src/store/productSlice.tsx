@@ -1,40 +1,30 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ProductModel, ProductArrayModel } from "../@types/type";
 
-const initialProductState: ProductArrayModel = {
-  allProducts: [],
-  featuredProducts:[],
-  categoryProducts:[],
-  singleProduct: {
-    _id: "",
-    name: "",
-    description: "",
-    price: 0,
-    featured: false,
-    imageUrl: "",
-    brand:"",
-    rating:0,
-    category:"",
-  },
-};
+const initialProductState = {
+  products : [] as ProductModel [],
+  length : 0,
+}
+  
+
 
 const productSlice = createSlice({
   name: "products",
   initialState: initialProductState,
   reducers: {
     setProducts(state, action: PayloadAction<ProductModel[]>) {
-      state.allProducts = action.payload;
+       state.products = action.payload
+       state.length = state.products.length
     },
-    setSingleProduct(state, action: PayloadAction<ProductModel>) {
-      state.singleProduct = action.payload;
-    },
-    setFeaturedProduct(state, action: PayloadAction<ProductModel[]>) {
-      state.featuredProducts = action.payload;
-    },
-    setCategoryProduct(state, action: PayloadAction<ProductModel[]>) {
-      state.categoryProducts = action.payload;
-    },
+   setProductsByCategory(state, action:PayloadAction<string>){
+      const category = action.payload
+      state.products = state.products.filter(product=>product.category === category)
+      state.length = state.products.length
+   }
+    //
+   
   },
 });
 
-export default productSlice;
+export const {setProducts , setProductsByCategory} = productSlice.actions
+export default productSlice.reducer

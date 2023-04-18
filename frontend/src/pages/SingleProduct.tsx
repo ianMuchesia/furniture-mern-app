@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+/* import React, { useEffect } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../hooks/reduxHooks'
 import { fetchSingleProduct } from '../store/productActions'
@@ -55,4 +55,4 @@ const SingleProduct = () => {
   )
 }
 
-export default SingleProduct
+export default SingleProduct */

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {
   Card,
@@ -12,29 +12,46 @@ import Loader from "../components/Loader";
 import { FcList } from "react-icons/fc";
 import {BsFillGridFill} from 'react-icons/bs'
 import { useAppDispatch, useAppSelector } from "../hooks/reduxHooks";
-import { fetchProducts } from "../store/productActions";
-import { ProductModel } from "../@types/type";
+
+ import { ProductModel } from "../@types/type";
+import { baseURL } from "../service";
+import { setProducts } from "../store/productSlice";
 const Shop = () => {
  
   //fetching products data
   const dispatch = useAppDispatch()
-  const allProducts = useAppSelector(state=>state.products.allProducts)
+
   const [gridView, setgridView] = useState(true);
   const [loading, setLoading] = useState(false);
+  const [dropdown , setDropdown] = useState(true)
 
  
 
-  useEffect(() => {
-    let isMounted= true;
-    setLoading(true);
-    if (isMounted){
-      dispatch(fetchProducts())
+  
+  const allProducts = useAppSelector(state=>state.products.products)
+  
+  useEffect(()=>{
+    let isMounted = true
+    const fetchAllProducts = async()=>{
+      try {
+        setLoading(true)
+        const response = await fetch(`${baseURL}products`)
+        const data = await response.json()
+  
+        if(data.success && isMounted){
+          dispatch(setProducts(data.msg))
+          setLoading(false)
+        }
+        
+      } catch (error) {
+        console.log(error)
+      }finally{
+        setLoading(false)
+      }
     }
-   
-    
-    setLoading(false)
+    fetchAllProducts()
     return ()=>{isMounted = false}
-}, []);
+  },[]);
 
 //page functionality
 const [ currentPage, setCurrentPage] = useState(1);
@@ -72,7 +89,7 @@ const handleNextPageClick=()=>{
   return (
     <section className="p-10 grid md:grid-cols-3">
       <div>
-      <Categorize />
+      <Categorize setDropdown={setDropdown} dropdown={dropdown} />
       </div>
       <div className="md:col-span-2">
         <div className="flex gap-4">
@@ -94,11 +111,11 @@ const handleNextPageClick=()=>{
           return <CardDescription key={product._id} product={product}/>
         })}
       </div>
-      </div>
       <Pagination pages={pages} currentPage={currentPage}  handlePageClick={handlePageClick} handleNextPageClick={handleNextPageClick} handlePreviousPageClick={handlePreviousPageClick}/>
+      </div>
+    
     </section>
   );
 };
 
 export default Shop;
- 

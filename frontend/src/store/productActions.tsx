@@ -1,8 +1,8 @@
-import { AnyAction, ThunkAction } from "@reduxjs/toolkit";
+/* import { AnyAction, ThunkAction } from "@reduxjs/toolkit";
 import productSlice from "./productSlice";
 import { RootState } from "./index";
 import { ProductModel } from "../@types/type";
-import ProductService from '../service/productService'
+import ProductService from '../service'
 
 
 export const productActions = productSlice.actions
@@ -41,3 +41,4 @@ export const fetchCategoryProducts =(pagination:number):ThunkAction<void,RootSta
         }
     }
 }
+ */

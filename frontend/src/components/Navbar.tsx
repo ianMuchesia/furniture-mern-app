@@ -44,13 +44,13 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li className={styles.links}>
-                <NavLink to="Shop">Shop</NavLink>
+                <NavLink to="/Shop">Shop</NavLink>
               </li>
               <li className={styles.links}>
-                <NavLink to="About">About</NavLink>
+                <NavLink to="/About">About</NavLink>
               </li>
               <li className={styles.links}>
-                <NavLink to="Contact">Contact</NavLink>
+                <NavLink to="/Contact">Contact</NavLink>
               </li>
             </ul>
           </div>
@@ -61,7 +61,7 @@ const Navbar = () => {
             <span className="text-4xl mx-1 lg:mx-3">
               <FiLogIn />
             </span>
-            <NavLink to="Cart" className="relative flex">
+            <NavLink to="/Cart" className="relative flex">
               <span className="text-4xl mx-1 lg:mx-3">
                 <AiOutlineShoppingCart />
               </span>
@@ -79,7 +79,7 @@ const Navbar = () => {
           </div>
         </div>
         <ul
-          className={`h-full top-0  flex  flex-col items-center justify-center absolute  text-lg font-bold gap-0 w-full bg-white z-[1] ${
+          className={`h-full top-0  flex  flex-col items-center justify-center absolute  text-lg font-bold gap-0 w-full bg-white  z-[1] ${
             toggle ? "h-screen" : "hidden"
           } `}
         >

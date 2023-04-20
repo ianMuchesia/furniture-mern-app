@@ -38,14 +38,15 @@ const SingleProduct = () => {
     const fetchSingleProduct = async () => {
       try {
         setLoading(true)
-        const response = await fetch(`${baseURL}products`);
+        const response = await fetch(`${baseURL}products/${SelectedProduct}`);
         const data = await response.json();
 
         if (isMounted && data.success) {
         
-          setSingleProduct(data.msg.find((product:ProductModel)=>product._id === SelectedProduct))
-          dispatch(setProductsByCategory(singleProduct.category))
-          setLoading(false)
+          console.log(data)
+          setSingleProduct(data.product);
+          dispatch(setProductsByCategory(data.product.category));
+          setLoading(false);
         }
       } catch (error) {
         console.log(error);

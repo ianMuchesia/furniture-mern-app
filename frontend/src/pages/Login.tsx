@@ -5,9 +5,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { baseURL } from '../service';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import { useAppDispatch } from '../hooks/reduxHooks';
+import { setIsAuthenticated, setUser } from '../store/authSlice';
 const Login = () => {
 
   const navigate = useNavigate()
+  const dispatch = useAppDispatch()
+
   const [loginForm , setLoginForm] = useState({
     email:"",
     password:"",
@@ -37,11 +41,14 @@ const Login = () => {
 
       const data = await response.json()
 
-      console.log(data)
+      console.log(data.user)
       if(data.success){
         toast.success("You are Logged in")
         setLoginForm({email:"", password:""})
         navigate("/Products")
+        dispatch(setIsAuthenticated(true))
+        dispatch(setUser(data.user))
+        
       }
       toast.error(data.msg)
       setErrorMessage(data.msg)

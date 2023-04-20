@@ -6,6 +6,7 @@ import {
   AiOutlineMenu,
   AiOutlineClose,
 } from "react-icons/ai";
+import {FcPortraitMode} from 'react-icons/fc'
 import logo from "../assets/logo.jpg";
 import { NavLink } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../hooks/reduxHooks";
@@ -14,13 +15,18 @@ const styles = {
   links: `  md:ml-16 xl:ml-20 text-lg xl:text-xl hover:underline hover:scale-125  hover:font-bold transition duration-500 ease-in-out`,
 };
 
-const Navbar = () => {
+export const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   const dispatch = useAppDispatch();
 
   const cartItemsQuantity = useAppSelector((state) => state.cart.totalQuantity);
   console.log(cartItemsQuantity);
+
+  const authenticated = useAppSelector((state)=>state.auth.isAuthenticated)
+  const user = useAppSelector((state)=> state.auth.user)
+
+  console.log(user)
 
   const handleClick = () => {
     setToggle((prevToggle) => !prevToggle);
@@ -56,9 +62,11 @@ const Navbar = () => {
             <span className="text-4xl mx-1 lg:mx-3">
               <AiOutlineSearch />
             </span>
-            <NavLink to="/Login">
+           {!authenticated?<NavLink to="/Login">
               <FiLogIn className="text-4xl mx-1 lg:mx-3" />
-            </NavLink>
+            </NavLink>:<NavLink to="/Profile">
+              <FcPortraitMode className="text-4xl mx-1 lg:mx-3" />
+            </NavLink>}
             <NavLink to="/Cart" className="relative flex">
               <span className="text-4xl mx-1 lg:mx-3">
                 <AiOutlineShoppingCart />
@@ -104,4 +112,5 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export const MemoizedNavbar = React.memo(Navbar)
+

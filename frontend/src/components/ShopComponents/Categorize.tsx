@@ -14,14 +14,14 @@ interface Props {
 }
 
 interface FormState {
-  search: string;
+
   brand: string;
   category: string;
   price: number;
 }
 
 const initialFormState: FormState = {
-  search: "",
+ 
   brand: "All",
   category: "",
   price: 0,
@@ -32,6 +32,7 @@ export const Categorize = ({ setDropdown, dropdown }: Props) => {
 
   const [form, setForm] = useState<FormState>(initialFormState);
 
+  const [search , setSearch] = useState("")
   const [backgroundStyle, setBackgroundStyle] = useState(false);
   const handleBrandChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -65,18 +66,17 @@ export const Categorize = ({ setDropdown, dropdown }: Props) => {
   };
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setForm((prevState) => ({
-      ...prevState,
-      [event.target.name]: event.target.value,
-    }));
-    dispatch(setSearchTerm(form.search))
+    const lowerCase = event.target.value.toLowerCase();
+    setSearch(lowerCase);
+ 
+    dispatch(setSearchTerm(search))
     dispatch(filterProducts())
   };
 
   const handleClearFilters = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setForm({
-      search: "",
+     
       brand: "All",
       category: "",
       price: 0,
@@ -96,18 +96,19 @@ export const Categorize = ({ setDropdown, dropdown }: Props) => {
 
       {dropdown && (
         <>
-          <form
-            className="flex flex-col gap-3 items-center"
-            onSubmit={handleClearFilters}
-          >
-            <input
+        <input
               type="text"
               name="search"
-              value={form.search}
+              value={search}
               placeholder="search"
               className="bg-blue-100 p-2 rounded-md text-gray-900"
               onChange={handleSearchChange}
             />
+          <form
+            className="flex flex-col gap-3 items-center"
+            onSubmit={handleClearFilters}
+          >
+            
 
             <h3 className="font-bold text-lg">Category</h3>
             <button type="button" onClick={() => handleCategoryClick("")}>

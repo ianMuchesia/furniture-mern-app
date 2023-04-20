@@ -16,7 +16,7 @@ export const FeaturedProducts = () => {
         const data = await response.json();
 
         if (isMounted && data.success) {
-          setFeaturedProducts(data.msg);
+          setFeaturedProducts(data.products);
         }
       } catch (error) {
         console.log(error);

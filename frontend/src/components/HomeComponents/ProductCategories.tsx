@@ -1,4 +1,14 @@
-import { Outdoor, livingRoom, Bedroom, entryWay, kitchen, Office, DiningRoom } from "../../assets";
+import {
+  Outdoor,
+  livingRoom,
+  Bedroom,
+  entryWay,
+  kitchen,
+  Office,
+  DiningRoom,
+} from "../../assets";
+import { setSearchTerm } from "../../store/productSlice";
+import { useState } from "react";
 export default function ProductListsCategoriesGrid() {
   return (
     <>
@@ -102,7 +112,6 @@ export default function ProductListsCategoriesGrid() {
                 </div>
               </div>
             </a>
-          
           </div>
         </div>
       </div>

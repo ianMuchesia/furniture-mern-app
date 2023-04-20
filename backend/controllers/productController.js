@@ -92,7 +92,7 @@ const deleteProduct = async (req, res) => {
 
 const getAllProductsByCategory = async (req, res) => {
   try {
-    const { featured, category, search, sort, fields, numericFilters, page } =
+    const { featured, category, search, sort, fields,brand, numericFilters, page } =
       req.query;
 
     const queryObject = {};
@@ -104,6 +104,10 @@ const getAllProductsByCategory = async (req, res) => {
     //category
     if (category) {
       queryObject.category = category;
+    }
+    //brand
+    if(brand){
+      queryObject.brand = brand
     }
     //search for an item
     if (search) {
@@ -156,7 +160,7 @@ const getAllProductsByCategory = async (req, res) => {
     const products = await result;
     res
       .status(200)
-      .json({ success: true, msg: products, nbHits: products.length });
+      .json({ success: true,  products, nbHits: products.length });
   } catch (error) {
     return res
       .status(StatusCodes.INTERNAL_SERVER_ERROR)

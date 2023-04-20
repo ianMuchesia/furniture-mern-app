@@ -33,8 +33,8 @@ const ForgotPassword = () => {
         toast.success(" Please check your email for your reset password")
         setSuccessMessage(data.msg)       
       }
-      toast.error(data.msg)
-      setErrorMessage(data.msg)
+     
+      
     } catch (error:any) {
   
       console.log(error)

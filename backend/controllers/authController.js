@@ -176,7 +176,7 @@ const forgotPassword = async (req, res) => {
 
     await sendEmail(subject, message, send_to, sent_from);
 
-    res.status(StatusCodes.OK).json({ success: true, msg: "Reset Email Sent" });
+    res.status(StatusCodes.OK).json({ success: true, msg: "Reset Email Sent, please check your email" });
   } catch (error) {
     console.log(error);
     return res
@@ -214,11 +214,16 @@ const resetPassword = async (req, res) => {
     const user = await User.findOne({_id: userToken.userId})
 
     user.password = password
-
+   
     await user.save()
 
      res.status(StatusCodes.CREATED).json({success: true , msg: "Password reset was succesfull, please Login"})
-  } catch (error) {}
+  } catch (error) {
+    console.log(error)
+    return res
+    .status(StatusCodes.INTERNAL_SERVER_ERROR)
+    .json({ msg: "something wrong happened, try again later" });
+  }
 };
 module.exports = {
   login,

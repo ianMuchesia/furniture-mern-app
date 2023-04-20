@@ -45,7 +45,7 @@ const SignUp = () => {
       const data = await response.json()
 
       if(data.success){
-        toast.success("You are Logged in")
+        toast.success("You are Signed Up!")
         setsignUpForm({email:"", password:"",firstName:"",lastName:""})
         navigate("/Products")
       }

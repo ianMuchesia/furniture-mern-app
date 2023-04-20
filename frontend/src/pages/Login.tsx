@@ -37,6 +37,7 @@ const Login = () => {
 
       const data = await response.json()
 
+      console.log(data)
       if(data.success){
         toast.success("You are Logged in")
         setLoginForm({email:"", password:""})

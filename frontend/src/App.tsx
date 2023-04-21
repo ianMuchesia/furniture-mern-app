@@ -13,7 +13,9 @@ function App() {
 
   useEffect(() => {
     dispatch(checkAuthentication());
-  }, [dispatch]);
+  }, []);
+
+  
 
   return (
     <BrowserRouter>

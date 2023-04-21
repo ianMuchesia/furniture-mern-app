@@ -39,7 +39,7 @@ app.set('trust proxy', 1);
   })
 ); */
 app.use(helmet());
-app.use(cors());
+app.use(cors({ origin: process.env.CLIENT_SIDE_URL, credentials: true}));
 app.use(xss());
 app.use(mongoSanitize());
 

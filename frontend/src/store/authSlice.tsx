@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 const initialAuthState = {
   isAuthenticated: false,
@@ -9,7 +9,7 @@ const authSlice = createSlice({
   name: "auth",
   initialState: initialAuthState,
   reducers: {
-    setIsAuthenticated(state, action) {
+    setIsAuthenticated(state, action:PayloadAction<boolean>) {
       state.isAuthenticated = action.payload;
     },
     setUser(state, action) {

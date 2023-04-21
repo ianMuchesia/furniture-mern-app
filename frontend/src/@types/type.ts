@@ -36,3 +36,9 @@ export interface cartModel{
     subTotal:number;
     showCart:boolean;
 }
+
+
+export interface authModel{
+    isAuthenticated: boolean,
+    user: string|null,
+}

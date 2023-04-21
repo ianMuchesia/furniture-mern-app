@@ -10,6 +10,7 @@ const login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
+    console.log(req.body)
     if (!email) {
       return res
         .status(StatusCodes.BAD_REQUEST)
